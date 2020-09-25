@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./dist/";
+/******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -448,7 +448,7 @@ function Header(props) {
     className: "col d-flex align-items-center header__inner"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
     className: "header__logo",
-    src: "../../img/logo.png",
+    src: "/assets/img/logo.png",
     width: "32px",
     alt: "|-/"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_TabSwitcher_TabSwitcher_jsx__WEBPACK_IMPORTED_MODULE_3__["TabSwitcher"], {
