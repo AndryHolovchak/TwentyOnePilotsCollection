@@ -11,7 +11,7 @@ function Header(props) {
           <div className="col d-flex align-items-center header__inner">
             <img
               className="header__logo"
-              src="/assets/img/logo.png"
+              src="assets/img/logo.png"
               width="32px"
               alt="|-/"
             />
