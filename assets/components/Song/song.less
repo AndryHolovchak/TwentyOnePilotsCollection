@@ -1,0 +1,106 @@
+@import "../../style/colors.less";
+
+.scaled-song() {
+  transform: scale(1.02);
+}
+.song {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  width: 98%;
+  max-width: 500px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 5px;
+  border-left: 1px solid @accent-color;
+  border-top: 1px solid lighten(@song-bg, 2%);
+  background-color: @song-bg;
+  box-shadow: 2px 0 4px 0px #000;
+  transition+: transform 0.2s;
+
+  &:hover {
+    background-color: lighten(@song-bg, 2%);
+    filter: brightness(1.2);
+  }
+
+  &:active {
+    filter: brightness(0.9);
+  }
+}
+.song--currently-playing {
+  .scaled-song();
+  box-shadow: 5px 5px 12px -5px black;
+  z-index: 1;
+  box-shadow: 3px 2px 4px 1px black;
+  background-color: lighten(@song-bg, 2%);
+
+  &:hover {
+    background-color: lighten(@song-bg, 3%);
+  }
+}
+.song--paused {
+  transform: scale(1);
+}
+.song__info {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+  padding: 5px;
+  overflow: hidden;
+  background-color: inherit;
+  user-select: none;
+}
+.song__album-cover {
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.song__main-info {
+  flex-grow: 1;
+  margin-left: 5px;
+  overflow: hidden;
+  padding-right: 15px;
+
+  * {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+.song__title {
+  color: rgba(202, 202, 202, 0.815);
+  font-size: 0.9em;
+}
+
+.song__buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  filter: brightness(70%);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  *:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+.song__button {
+  width: 18px;
+  height: 18px;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+.song__caching-button {
+  display: none;
+}
+.song__download-button:extend(.song-button all) {
+  content: url("/assets/img/icons/download.svg");
+  opacity: 70%;
+}

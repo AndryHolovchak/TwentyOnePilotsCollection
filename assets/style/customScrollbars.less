@@ -1,0 +1,32 @@
+@import "./colors.less";
+
+.with-hidden-scrollbar {
+  scrollbar-width: none !important;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+.with-customized-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: @accent-color transparent;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: @accent-color;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: lighten(@accent-color, 5%);
+  }
+}

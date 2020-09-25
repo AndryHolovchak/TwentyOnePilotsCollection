@@ -1,0 +1,51 @@
+@import "../../node_modules/normalize.css/normalize.css";
+@import "./customScrollbars.less";
+@import "./sizes.less";
+@import "../fonts/Lato/lato.css";
+
+html {
+  height: 100%;
+  .with-hidden-scrollbar();
+}
+body {
+  height: 100%;
+  background-color: #090909;
+  font-family: "Lato";
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: none;
+
+  .player {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-shrink: 0;
+  }
+}
+.root__main-content {
+  flex-grow: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: calc(@player-height + 20px);
+    width: 100%;
+  }
+}
+body,
+* {
+  .with-customized-scrollbar();
+}

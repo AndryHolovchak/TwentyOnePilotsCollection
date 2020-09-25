@@ -1,0 +1,36 @@
+@import "../../style/colors.less";
+
+.tab-switcher {
+  width: 500px;
+  max-width: 100%;
+}
+.tab-switcher__buttons-container {
+  display: flex;
+  color: rgb(223, 223, 223);
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+}
+.tabSwitcher__button {
+  flex-grow: 1;
+  padding: 3px 10px;
+  background-color: #2b2b2b;
+  transition: all 0.1s;
+  text-align: center;
+}
+.tabSwitcher__button:hover {
+  background-color: desaturate(@accent-color, 20%);
+  color: #000;
+}
+.tabSwitcher__button:active {
+  background-color: desaturate(@accent-color, 30%);
+}
+.tabSwitcher__button--active {
+  flex-grow: 2;
+  color: #000;
+  background-color: @accent-color;
+}

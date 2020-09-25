@@ -1,0 +1,68 @@
+@import "../../style/colors.less";
+
+.player-progress-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 500px;
+  height: 8px;
+  margin: 0 auto;
+  padding: 0;
+  color: rgb(245, 245, 245);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.player-progress-bar__current-time,
+.player-progress-bar__song-duration {
+  display: inline-block;
+  font-size: 0.8em;
+  width: 50px;
+  text-align: center;
+  opacity: 70%;
+}
+
+.player-progress-bar__line-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgba(238, 238, 238, 0.137);
+  transition: height 0.3s;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    .player-progress-bar__line {
+      filter: none;
+
+      &::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 5px;
+        height: 200%;
+        float: right;
+        z-index: 2;
+        border-radius: 5px;
+        background-color: rgb(241, 241, 241);
+        transform: translateY(-50%);
+        content: "";
+      }
+    }
+  }
+}
+
+.player-progress-bar__line {
+  position: relative;
+  overflow: visible;
+  height: 100%;
+  margin: 0;
+  border-radius: 5px;
+  background-color: darken(@accent-color, 10%);
+  filter: grayscale(100%);
+}

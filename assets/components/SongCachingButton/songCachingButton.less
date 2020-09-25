@@ -1,0 +1,34 @@
+@import "../../style/colors.less";
+@import "../Song/song.less";
+@import "../../style/shimmeringText.less";
+
+@color-for-uncached: rgb(99, 99, 99);
+
+.song-caching-button__text {
+  font-size: 0.9em;
+  color: @color-for-uncached;
+
+  &:hover {
+    color: lighten(@color-for-uncached, 20%);
+    text-decoration: none;
+  }
+  &:active {
+    color: lighten(@color-for-uncached, 5%);
+  }
+}
+.song-caching-button--cached {
+  .song-caching-button__text {
+    color: inherit;
+    &:hover {
+      filter: brightness(1.5);
+    }
+    &:active {
+      filter: brightness(0.8);
+    }
+  }
+}
+.song-caching-button--in-progress {
+  .song-caching-button__text {
+    .shimmering-text(@color-for-uncached, lighten(#fff, 10%));
+  }
+}
