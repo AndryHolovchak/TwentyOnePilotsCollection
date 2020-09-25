@@ -1,0 +1,22 @@
+{
+  "name": "Vessel",
+  "accentColor": "#364d67",
+  "songs": [
+    { "title": "Ode To Sleep", "id": 28 },
+    { "title": "Holding On To You", "id": 29 },
+    { "title": "Migraine", "id": 30 },
+    { "title": "House of Gold", "id": 31 },
+    { "title": "Car Radio", "id": 32 },
+    { "title": "Semi-Automatic", "id": 33 },
+    { "title": "Screen", "id": 34 },
+    { "title": "The Run And Go", "id": 35 },
+    { "title": "Fake You Out", "id": 36 },
+    { "title": "Guns For Hands", "id": 37 },
+    { "title": "Trees", "id": 38 },
+    { "title": "Truce", "id": 39 },
+    { "title": "Glowing Eyes", "id": 40 },
+    { "title": "Kitchen Sink", "id": 41 },
+    { "title": "Lovely", "id": 42 },
+    { "title": "Forest", "id": 43 }
+  ]
+}

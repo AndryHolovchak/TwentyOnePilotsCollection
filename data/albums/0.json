@@ -1,0 +1,20 @@
+{
+  "name": "Self titled",
+  "accentColor": "#99c740",
+  "songs": [
+    { "title": "Implicit Demand For Proof", "id": 0 },
+    { "title": "Fall Away", "id": 1 },
+    { "title": "The Pantaloon", "id": 2 },
+    { "title": "Addict With A Pen", "id": 3 },
+    { "title": "Friend, Please", "id": 4 },
+    { "title": "March to The Sea", "id": 5 },
+    { "title": "Johny Boy", "id": 6 },
+    { "title": "Oh, Ms. Believer", "id": 7 },
+    { "title": "Air Catcher", "id": 8 },
+    { "title": "Trapdoor", "id": 9 },
+    { "title": "A Car, A Torch, A Death", "id": 10 },
+    { "title": "Taxi Cab", "id": 11 },
+    { "title": "Before You Start Your Day", "id": 12 },
+    { "title": "Isle of Flightless Birds", "id": 13 }
+  ]
+}

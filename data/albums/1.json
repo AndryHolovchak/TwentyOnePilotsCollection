@@ -1,0 +1,62 @@
+{
+  "name": "Regional At Best",
+  "accentColor": "#9f732e",
+  "songs": [
+    {
+      "title": "Guns For Hands",
+      "id": 14
+    },
+    {
+      "title": "Holding On To You",
+      "id": 15
+    },
+    {
+      "title": "Ode To Sleep",
+      "id": 16
+    },
+    {
+      "title": "Slowtown",
+      "id": 17
+    },
+    {
+      "title": "Car Radio",
+      "id": 18
+    },
+    {
+      "title": "Forest",
+      "id": 19
+    },
+    {
+      "title": "Glowing Eyes",
+      "id": 20
+    },
+    {
+      "title": "Kitchen Sink",
+      "id": 21
+    },
+    {
+      "title": "Anathema",
+      "id": 22
+    },
+    {
+      "title": "Lovely",
+      "id": 23
+    },
+    {
+      "title": "Ruby",
+      "id": 24
+    },
+    {
+      "title": "Trees",
+      "id": 25
+    },
+    {
+      "title": "Be concerned",
+      "id": 26
+    },
+    {
+      "title": "Clear",
+      "id": 27
+    }
+  ]
+}

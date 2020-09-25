@@ -1,0 +1,21 @@
+{
+  "name": "Blurryface",
+  "accentColor": "#ff5b40",
+  "songs": [
+    { "title": "Heavydirtysoul", "id": 44 },
+    { "title": "Stressed Out", "id": 45 },
+    { "title": "Ride", "id": 46 },
+    { "title": "Fairly Local", "id": 47 },
+    { "title": "Tear In My Hearth", "id": 48 },
+    { "title": "Lane Boy", "id": 49 },
+    { "title": "The Judge", "id": 50 },
+    { "title": "Doubt", "id": 51 },
+    { "title": "Polarize", "id": 52 },
+    { "title": "We Don't Believe What's On TV", "id": 53 },
+    { "title": "Message Man", "id": 54 },
+    { "title": "Hometown", "id": 55 },
+    { "title": "Not Today", "id": 56 },
+    { "title": "Goner", "id": 57 },
+    { "title": "Heathnes", "id": 58 }
+  ]
+}
