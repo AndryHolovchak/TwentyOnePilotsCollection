@@ -3416,17 +3416,17 @@ var UrlProvider = /*#__PURE__*/function () {
   _createClass(UrlProvider, null, [{
     key: "getUrlToMp3",
     value: function getUrlToMp3(songId) {
-      return "../../../data/mp3/".concat(songId, ".mp3");
+      return "data/mp3/".concat(songId, ".mp3");
     }
   }, {
     key: "getUrlToAlbumCover",
     value: function getUrlToAlbumCover(albumId, size) {
-      return "../../../data/covers/".concat(size, "/").concat(albumId, ".jpg");
+      return "data/covers/".concat(size, "/").concat(albumId, ".jpg");
     }
   }, {
     key: "getUrlToAlbumJson",
     value: function getUrlToAlbumJson(albumId) {
-      return "../../../data/albums/".concat(albumId, ".json");
+      return "data/albums/".concat(albumId, ".json");
     }
   }, {
     key: "getUrlToYoutubeIframe",
