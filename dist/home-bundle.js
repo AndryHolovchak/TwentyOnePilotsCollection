@@ -1742,7 +1742,7 @@ var VideoCollection = /*#__PURE__*/function (_Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return fetch("/data/videos.json");
+                return fetch("data/videos.json");
 
               case 2:
                 response = _context.sent;

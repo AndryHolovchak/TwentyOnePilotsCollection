@@ -13,7 +13,7 @@ class VideoCollection extends Component {
   }
 
   async initialize() {
-    let response = await fetch("/data/videos.json");
+    let response = await fetch("data/videos.json");
     this.videos = await response.json();
     this.setState({ isInitialized: true });
   }
