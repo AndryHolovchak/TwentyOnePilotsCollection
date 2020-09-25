@@ -2,10 +2,12 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: "./assets/js/HomePage.jsx",
+  resolve: { roots: [path.resolve("./")] },
+
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "home-bundle.js",
-    publicPath: "/dist/",
+    publicPath: "./dist/",
   },
   devtool: "source-map",
   module: {
