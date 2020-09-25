@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { useTabsSystemListener } from "../../js/hooks/useTabsSystemListener.jsx";
 import "./tabsContent.less";
 
-function TabsContent({ children, tabsSystem, className = "" }) {
+function TabsContent({ children, tabsSystem }) {
   let getWrappedChildren = () => {
     return children.map((children, i) => {
       let wrapClassName = `tabs-content__item-wrap`;
@@ -19,9 +19,7 @@ function TabsContent({ children, tabsSystem, className = "" }) {
   };
   useTabsSystemListener(tabsSystem);
 
-  return (
-    <div className={"tabs-content " + className}>{getWrappedChildren()}</div>
-  );
+  return <div className="tabs-content">{getWrappedChildren()}</div>;
 }
 
 export { TabsContent };

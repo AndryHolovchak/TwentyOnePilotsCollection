@@ -1,4 +1,13 @@
+@import "../../style/sizes.less";
+
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: @header-height;
+  padding: 10px 0;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   color: #fff;
@@ -6,6 +15,11 @@
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+
+  @supports (backdrop-filter: blur()) {
+    backdrop-filter: blur(15px);
+    background-color: #141414d0;
+  }
 }
 .header__row {
   height: 100%;

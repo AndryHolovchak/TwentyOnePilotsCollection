@@ -20,10 +20,7 @@ class HomePage extends Component {
     return (
       <>
         <Header tabsSystem={this.tabsSystem}></Header>
-        <TabsContent
-          tabsSystem={this.tabsSystem}
-          className="root__main-content"
-        >
+        <TabsContent tabsSystem={this.tabsSystem}>
           <AlbumsCollection></AlbumsCollection>
           <VideoCollection></VideoCollection>
         </TabsContent>

@@ -1,3 +1,21 @@
+@import "../../style/sizes.less";
+
+.tabs-content {
+  &::before {
+    content: "";
+    display: block;
+    height: calc(@header-height + 20px);
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: calc(@player-height + 20px);
+    width: 100%;
+  }
+}
+
 .tabs-content__item-wrap {
   position: fixed;
   visibility: hidden;
