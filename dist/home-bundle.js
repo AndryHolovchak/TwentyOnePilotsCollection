@@ -2023,6 +2023,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AlbumsCollection_AlbumsCollection_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/AlbumsCollection/AlbumsCollection.jsx */ "./assets/components/AlbumsCollection/AlbumsCollection.jsx");
 /* harmony import */ var _components_Player_Player_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Player/Player.jsx */ "./assets/components/Player/Player.jsx");
 /* harmony import */ var _components_VideoCollection_VideoCollection_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/VideoCollection/VideoCollection.jsx */ "./assets/components/VideoCollection/VideoCollection.jsx");
+/* harmony import */ var _helpers_MediaSessionManager_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./helpers/MediaSessionManager.js */ "./assets/js/helpers/MediaSessionManager.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2044,6 +2045,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -2525,6 +2527,191 @@ var ExtendedEvent = /*#__PURE__*/function () {
   return ExtendedEvent;
 }();
 
+
+
+/***/ }),
+
+/***/ "./assets/js/helpers/MediaSessionManager.js":
+/*!**************************************************!*\
+  !*** ./assets/js/helpers/MediaSessionManager.js ***!
+  \**************************************************/
+/*! exports provided: instance */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "instance", function() { return instance; });
+/* harmony import */ var _utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/UrlProvider.js */ "./assets/js/utils/UrlProvider.js");
+/* harmony import */ var _Player_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Player.js */ "./assets/js/helpers/Player.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var MediaSessionManager = /*#__PURE__*/function () {
+  // _fakeAudio is necessary so that mediaSession does not disappear when changing tracks
+  function MediaSessionManager() {
+    var _this = this;
+
+    _classCallCheck(this, MediaSessionManager);
+
+    _defineProperty(this, "supportsMediaSession", void 0);
+
+    _defineProperty(this, "_fakeAudio", new Audio());
+
+    this.supportsMediaSession = "mediaSession" in navigator;
+    this._fakeAudio.autoplay = false;
+    this._fakeAudio.volume = 0;
+    this._handlePlayerSongChange = this._handlePlayerSongChange.bind(this);
+    this._handlePlayerTogglePause = this._handlePlayerTogglePause.bind(this);
+    this._fakeAudio.src = MediaSessionManager.__FAKE_AUDIO_SRC;
+
+    this._fakeAudio.addEventListener("ended", function () {
+      _this._fakeAudio.currentTime = 0;
+
+      _this._fakeAudio.play();
+    }, false);
+
+    this.setPauseHandler(function () {
+      return _this.togglePlay();
+    });
+    this.setPlayHandler(function () {
+      return _this.togglePlay();
+    });
+    this.setSeekBackwardHandler(function () {
+      return true;
+    });
+    this.setSeekForwardHandler(function () {
+      return true;
+    });
+    this.setNextTrackHandler(function () {
+      return _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].playNext();
+    });
+    this.setPreviousTrackHandler(function () {
+      return _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].playPrevious();
+    });
+    _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].addOnSongChangeListener(this._handlePlayerSongChange);
+    _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].addOnTogglePlayListener(this._handlePlayerTogglePause);
+  }
+
+  _createClass(MediaSessionManager, [{
+    key: "togglePlay",
+    value: function togglePlay() {
+      _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].togglePlay();
+
+      if (_Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].isPlaying) {
+        this.play();
+      } else {
+        this.pause();
+      }
+    }
+  }, {
+    key: "play",
+    value: function play() {
+      if (this.supportsMediaSession) {
+        this._fakeAudio.play();
+
+        navigator.mediaSession.playbackState = "playing";
+      }
+    }
+  }, {
+    key: "pause",
+    value: function pause() {
+      if (this.supportsMediaSession) {
+        this._fakeAudio.pause();
+
+        navigator.mediaSession.playbackState = "paused";
+      }
+    }
+  }, {
+    key: "setPauseHandler",
+    value: function setPauseHandler(callback) {
+      this._setHandler("pause", callback);
+    }
+  }, {
+    key: "setPlayHandler",
+    value: function setPlayHandler(callback) {
+      this._setHandler("play", callback);
+    }
+  }, {
+    key: "setSeekBackwardHandler",
+    value: function setSeekBackwardHandler(callback) {
+      this._setHandler("seekbackward", callback);
+    }
+  }, {
+    key: "setSeekForwardHandler",
+    value: function setSeekForwardHandler(callback) {
+      this._setHandler("seekforward", callback);
+    }
+  }, {
+    key: "setPreviousTrackHandler",
+    value: function setPreviousTrackHandler(callback) {
+      this._setHandler("previoustrack", callback);
+    }
+  }, {
+    key: "setNextTrackHandler",
+    value: function setNextTrackHandler(callback) {
+      this._setHandler("nexttrack", callback);
+    }
+  }, {
+    key: "update",
+    value: function update(song) {
+      if (!this.supportsMediaSession) {
+        return;
+      }
+
+      if (song) {
+        var albumCoverUrl = _utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_0__["UrlProvider"].getUrlToAlbumCover(song.albumId, 600);
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: song.title,
+          artist: "Twenty One Pilots",
+          artwork: [{
+            src: albumCoverUrl,
+            sizes: "600x600",
+            type: "image/jpeg"
+          }]
+        });
+      } else {
+        this._fakeAudio.src = MediaSessionManager.__FAKE_AUDIO_SRC;
+        navigator.mediaSession.metadata = null;
+      }
+    }
+  }, {
+    key: "_handlePlayerSongChange",
+    value: function _handlePlayerSongChange(songDescription) {
+      this.update(songDescription);
+    }
+  }, {
+    key: "_handlePlayerTogglePause",
+    value: function _handlePlayerTogglePause(isPlaying) {
+      if (isPlaying) {
+        this.play();
+      } else {
+        this.pause();
+      }
+    }
+  }, {
+    key: "_setHandler",
+    value: function _setHandler(name, callback) {
+      if (this.supportsMediaSession) {
+        navigator.mediaSession.setActionHandler(name, null);
+        navigator.mediaSession.setActionHandler(name, callback);
+      }
+    }
+  }]);
+
+  return MediaSessionManager;
+}();
+
+_defineProperty(MediaSessionManager, "__FAKE_AUDIO_SRC", "../../../data/mp3/justAudioFile.mp3");
+
+var instance = new MediaSessionManager();
 
 
 /***/ }),

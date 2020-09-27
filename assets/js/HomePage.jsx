@@ -9,6 +9,7 @@ import { Album } from "../components/Album/Album.jsx";
 import { AlbumsCollection } from "../components/AlbumsCollection/AlbumsCollection.jsx";
 import { Player } from "../components/Player/Player.jsx";
 import { VideoCollection } from "../components/VideoCollection/VideoCollection.jsx";
+import { instance as mediaSessionManager } from "./helpers/MediaSessionManager.js";
 
 class HomePage extends Component {
   constructor() {
