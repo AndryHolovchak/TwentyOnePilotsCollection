@@ -1,25 +1,36 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
 import ReactDOM from "react-dom";
-import { useTabsSystemListener } from "../../js/hooks/useTabsSystemListener.jsx";
 import "./tabsContent.less";
+import { useTabsSystemListener } from "../../js/hooks/useTabsSystemListener.jsx";
 
 function TabsContent({ children, tabsSystem }) {
+  const nodeRef = useRef(null);
+  useTabsSystemListener(tabsSystem);
+
   let getWrappedChildren = () => {
     return children.map((children, i) => {
-      let wrapClassName = `tabs-content__item-wrap`;
+      let className = "tabs-content__item-wrap";
       if (tabsSystem.activeTabIndex === i) {
-        wrapClassName += " tabs-content__item-wrap--active";
+        className += " tabs-content__item-wrap--active";
       }
       return (
-        <div key={i} className={wrapClassName}>
+        <div key={i} className={className}>
           {children}
         </div>
       );
     });
   };
-  useTabsSystemListener(tabsSystem);
 
-  return <div className="tabs-content">{getWrappedChildren()}</div>;
+  let childs = getWrappedChildren();
+
+  if (nodeRef.current) {
+    nodeRef.current.scrollTop = 0;
+  }
+
+  return (
+    <div ref={nodeRef} className="tabs-content">
+      {childs}
+    </div>
+  );
 }
-
 export { TabsContent };

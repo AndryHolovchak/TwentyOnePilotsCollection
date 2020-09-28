@@ -23,6 +23,8 @@ class VideoCollection extends Component {
       return <div className="video-collection"></div>;
     }
 
+    return <div className="a"></div>;
+
     return (
       <div className="video-collection">
         <div className="container-fluid">

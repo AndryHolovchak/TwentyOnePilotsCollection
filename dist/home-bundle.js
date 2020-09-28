@@ -1531,9 +1531,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _js_hooks_useTabsSystemListener_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../js/hooks/useTabsSystemListener.jsx */ "./assets/js/hooks/useTabsSystemListener.jsx");
-/* harmony import */ var _tabsContent_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabsContent.less */ "./assets/components/TabsContent/tabsContent.less");
-/* harmony import */ var _tabsContent_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_tabsContent_less__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _tabsContent_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabsContent.less */ "./assets/components/TabsContent/tabsContent.less");
+/* harmony import */ var _tabsContent_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_tabsContent_less__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _js_hooks_useTabsSystemListener_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../js/hooks/useTabsSystemListener.jsx */ "./assets/js/hooks/useTabsSystemListener.jsx");
 
 
 
@@ -1542,26 +1542,34 @@ __webpack_require__.r(__webpack_exports__);
 function TabsContent(_ref) {
   var children = _ref.children,
       tabsSystem = _ref.tabsSystem;
+  var nodeRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  Object(_js_hooks_useTabsSystemListener_jsx__WEBPACK_IMPORTED_MODULE_3__["useTabsSystemListener"])(tabsSystem);
 
   var getWrappedChildren = function getWrappedChildren() {
     return children.map(function (children, i) {
-      var wrapClassName = "tabs-content__item-wrap";
+      var className = "tabs-content__item-wrap";
 
       if (tabsSystem.activeTabIndex === i) {
-        wrapClassName += " tabs-content__item-wrap--active";
+        className += " tabs-content__item-wrap--active";
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: i,
-        className: wrapClassName
+        className: className
       }, children);
     });
   };
 
-  Object(_js_hooks_useTabsSystemListener_jsx__WEBPACK_IMPORTED_MODULE_2__["useTabsSystemListener"])(tabsSystem);
+  var childs = getWrappedChildren();
+
+  if (nodeRef.current) {
+    nodeRef.current.scrollTop = 0;
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    ref: nodeRef,
     className: "tabs-content"
-  }, getWrappedChildren());
+  }, childs);
 }
 
 
@@ -1776,6 +1784,9 @@ var VideoCollection = /*#__PURE__*/function (_Component) {
         });
       }
 
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "a"
+      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-collection"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3220,6 +3231,7 @@ var TabsSystem = /*#__PURE__*/function () {
 
     this._tabCount = tabCount;
     this._activeTabIndex = activeTabIndex;
+    this._prevActiveTabIndex = -1;
     this._activeTabIndexListeners = [];
   }
 
@@ -3251,10 +3263,16 @@ var TabsSystem = /*#__PURE__*/function () {
     },
     set: function set(value) {
       if (this._activeTabIndex !== value) {
+        this._prevActiveTabIndex = this._activeTabIndex;
         this._activeTabIndex = value;
 
         this._triggerActiveTabListeners();
       }
+    }
+  }, {
+    key: "prevActiveTabIndex",
+    get: function get() {
+      return this._prevActiveTabIndex;
     }
   }]);
 
@@ -13477,7 +13495,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".tabs-content::before {\n  content: \"\";\n  display: block;\n  height: calc(50px + 20px);\n  width: 100%;\n}\n.tabs-content::after {\n  content: \"\";\n  display: block;\n  height: calc(150px + 20px);\n  width: 100%;\n}\n.tabs-content__item-wrap {\n  position: fixed;\n  visibility: hidden;\n}\n.tabs-content__item-wrap.tabs-content__item-wrap--active {\n  position: static;\n  visibility: visible;\n}\n", "",{"version":3,"sources":["webpack://assets/components/TabsContent/tabsContent.less"],"names":[],"mappings":"AAGE;EACE,WAAA;EACA,cAAA;EACA,yBAAA;EACA,WAAA;AAFJ;AAKE;EACE,WAAA;EACA,cAAA;EACA,0BAAA;EACA,WAAA;AAHJ;AAOA;EACE,eAAA;EACA,kBAAA;AALF;AAOA;EACE,gBAAA;EACA,mBAAA;AALF","sourcesContent":["@import \"../../style/sizes.less\";\n\n.tabs-content {\n  &::before {\n    content: \"\";\n    display: block;\n    height: calc(@header-height + 20px);\n    width: 100%;\n  }\n\n  &::after {\n    content: \"\";\n    display: block;\n    height: calc(@player-height + 20px);\n    width: 100%;\n  }\n}\n\n.tabs-content__item-wrap {\n  position: fixed;\n  visibility: hidden;\n}\n.tabs-content__item-wrap.tabs-content__item-wrap--active {\n  position: static;\n  visibility: visible;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".tabs-content {\n  overflow-y: scroll;\n}\n.tabs-content::before {\n  content: \"\";\n  display: block;\n  height: calc(50px + 20px);\n  width: 100%;\n}\n.tabs-content::after {\n  content: \"\";\n  display: block;\n  height: calc(150px + 20px);\n  width: 100%;\n}\n.tabs-content__item-wrap {\n  position: fixed;\n  visibility: hidden;\n}\n.tabs-content__item-wrap.tabs-content__item-wrap--active {\n  position: static;\n  visibility: visible;\n}\n", "",{"version":3,"sources":["webpack://assets/components/TabsContent/tabsContent.less"],"names":[],"mappings":"AAEA;EACE,kBAAA;AADF;AAEE;EACE,WAAA;EACA,cAAA;EACA,yBAAA;EACA,WAAA;AAAJ;AAGE;EACE,WAAA;EACA,cAAA;EACA,0BAAA;EACA,WAAA;AADJ;AAKA;EACE,eAAA;EACA,kBAAA;AAHF;AAKA;EACE,gBAAA;EACA,mBAAA;AAHF","sourcesContent":["@import \"../../style/sizes.less\";\n\n.tabs-content {\n  overflow-y: scroll;\n  &::before {\n    content: \"\";\n    display: block;\n    height: calc(@header-height + 20px);\n    width: 100%;\n  }\n\n  &::after {\n    content: \"\";\n    display: block;\n    height: calc(@player-height + 20px);\n    width: 100%;\n  }\n}\n\n.tabs-content__item-wrap {\n  position: fixed;\n  visibility: hidden;\n}\n.tabs-content__item-wrap.tabs-content__item-wrap--active {\n  position: static;\n  visibility: visible;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

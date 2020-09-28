@@ -2,13 +2,18 @@ class TabsSystem {
   constructor(tabCount, activeTabIndex = 0) {
     this._tabCount = tabCount;
     this._activeTabIndex = activeTabIndex;
+    this._prevActiveTabIndex = -1;
     this._activeTabIndexListeners = [];
   }
   get activeTabIndex() {
     return this._activeTabIndex;
   }
+  get prevActiveTabIndex() {
+    return this._prevActiveTabIndex;
+  }
   set activeTabIndex(value) {
     if (this._activeTabIndex !== value) {
+      this._prevActiveTabIndex = this._activeTabIndex;
       this._activeTabIndex = value;
       this._triggerActiveTabListeners();
     }
