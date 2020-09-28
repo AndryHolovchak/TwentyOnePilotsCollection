@@ -1620,25 +1620,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _videoBlock_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./videoBlock.less */ "./assets/components/VideoBlock/videoBlock.less");
 /* harmony import */ var _videoBlock_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_videoBlock_less__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _js_utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../js/utils/UrlProvider.js */ "./assets/js/utils/UrlProvider.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
 
-function VideoBlock(_ref) {
-  var title = _ref.title,
-      youtubeVideoId = _ref.youtubeVideoId;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "video-block"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "video-block__title-wrap"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
-    src: _js_utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_2__["UrlProvider"].getUrlToYoutubeIframe(youtubeVideoId),
-    loading: "lazy",
-    frameBorder: "0",
-    allowFullScreen: "allowFullScreen",
-    srcDoc: "<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/".concat(youtubeVideoId, "?autoplay=1><img src=https://img.youtube.com/vi/").concat(youtubeVideoId, "/hqdefault.jpg ><span>\u25B6</span></a>")
-  }));
-}
+
+var VideoBlock = /*#__PURE__*/function (_Component) {
+  _inherits(VideoBlock, _Component);
+
+  var _super = _createSuper(VideoBlock);
+
+  function VideoBlock(props) {
+    var _this;
+
+    _classCallCheck(this, VideoBlock);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      videoShouldBeLoaded: false
+    };
+    _this.handlePreviewClick = _this.handlePreviewClick.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(VideoBlock, [{
+    key: "handlePreviewClick",
+    value: function handlePreviewClick() {
+      this.setState({
+        videoShouldBeLoaded: true
+      });
+    }
+  }, {
+    key: "generateIframe",
+    value: function generateIframe() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
+        src: _js_utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_2__["UrlProvider"].getUrlToYoutubeIframe(this.props.youtubeVideoId),
+        frameBorder: "0",
+        autoPlay: "",
+        allowFullScreen: ""
+      });
+    }
+  }, {
+    key: "generatePreview",
+    value: function generatePreview() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "video-block__preview",
+        onClick: this.handlePreviewClick
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _js_utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_2__["UrlProvider"].getUrlToYoutubePreview(this.props.youtubeVideoId),
+        alt: "",
+        className: "video-block__preview-img"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "assets/img/icons/youtube-button.svg",
+        alt: "",
+        className: "video-block__preview-button"
+      }));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "video-block"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "video-block__title-wrap"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.title)), this.state.videoShouldBeLoaded ? this.generateIframe() : this.generatePreview());
+    }
+  }]);
+
+  return VideoBlock;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
 
@@ -3631,7 +3702,12 @@ var UrlProvider = /*#__PURE__*/function () {
   }, {
     key: "getUrlToYoutubeIframe",
     value: function getUrlToYoutubeIframe(videoId) {
-      return "https://www.youtube.com/embed/".concat(videoId);
+      return "https://www.youtube.com/embed/".concat(videoId, "?autoplay=1");
+    }
+  }, {
+    key: "getUrlToYoutubePreview",
+    value: function getUrlToYoutubePreview(videoId) {
+      return "https://img.youtube.com/vi/".concat(videoId, "/hqdefault.jpg");
     }
   }]);
 
@@ -13515,7 +13591,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".video-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 500px;\n  max-width: 100%;\n  padding: 10px;\n  border: 1px solid #1c1c1c;\n  border-radius: 5px;\n  background-color: #111;\n  transition: transform 0.2s;\n}\n.video-block:hover {\n  background-color: #141414;\n}\n.video-block iframe,\n.video-block .iframe {\n  width: 100%;\n  height: 270px;\n  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n  border-radius: inherit;\n}\n.video-block__title-wrap {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 0 15px 5px 0;\n  border-bottom: 1px solid rgba(219, 219, 21, 0.205);\n  color: #eee;\n  font-size: 18px;\n  font-weight: 400;\n  text-align: center;\n  cursor: default;\n  box-shadow: inset 0 0 10px 0 inherit;\n}\n", "",{"version":3,"sources":["webpack://assets/components/VideoBlock/videoBlock.less"],"names":[],"mappings":"AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,yBAAA;EACA,kBAAA;EACA,sBAAA;EACA,0BAAA;AADF;AAGE;EACE,yBAAA;AADJ;AAZA;;EAkBI,WAAA;EACA,aAAA;EACA,+CAAA;EACA,sBAAA;AAFJ;AAKA;EACE,WAAA;EACA,mBAAA;EACA,qBAAA;EACA,kDAAA;EACA,WAAA;EACA,eAAA;EACA,gBAAA;EACA,kBAAA;EACA,eAAA;EACA,oCAAA;AAHF","sourcesContent":["@import \"../../style/colors.less\";\n\n.video-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 500px;\n  max-width: 100%;\n  padding: 10px;\n  border: 1px solid #1c1c1c;\n  border-radius: 5px;\n  background-color: #111;\n  transition: transform 0.2s;\n\n  &:hover {\n    background-color: rgb(20, 20, 20);\n  }\n\n  iframe,\n  .iframe {\n    width: 100%;\n    height: 270px;\n    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n    border-radius: inherit;\n  }\n}\n.video-block__title-wrap {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 0 15px 5px 0;\n  border-bottom: 1px solid rgba(219, 219, 21, 0.205);\n  color: #eee;\n  font-size: 18px;\n  font-weight: 400;\n  text-align: center;\n  cursor: default;\n  box-shadow: inset 0 0 10px 0 inherit;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".video-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 500px;\n  max-width: 100%;\n  padding: 10px;\n  border: 1px solid #1c1c1c;\n  border-radius: 5px;\n  background-color: #111;\n  transition: transform 0.2s;\n}\n.video-block:hover {\n  background-color: #141414;\n}\n.video-block iframe {\n  width: 100%;\n  height: 350px;\n  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n  border-radius: inherit;\n}\n.video-block__title-wrap {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 0 15px 5px 0;\n  border-bottom: 1px solid rgba(219, 219, 21, 0.205);\n  color: #eee;\n  font-size: 18px;\n  font-weight: 400;\n  text-align: center;\n  cursor: default;\n  box-shadow: inset 0 0 10px 0 inherit;\n}\n.video-block__preview {\n  position: relative;\n  cursor: pointer;\n  border-radius: inherit;\n  height: 350px;\n}\n.video-block__preview-img {\n  border-radius: inherit;\n  width: 100%;\n  height: 100%;\n}\n.video-block__preview-button {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 72px;\n}\n.video-block__preview:hover .video-block__preview-button {\n  filter: brightness(1.1);\n}\n.video-block__preview:active .video-block__preview-button {\n  filter: brightness(0.9);\n}\n", "",{"version":3,"sources":["webpack://assets/components/VideoBlock/videoBlock.less"],"names":[],"mappings":"AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,yBAAA;EACA,kBAAA;EACA,sBAAA;EACA,0BAAA;AADF;AAGE;EACE,yBAAA;AADJ;AAZA;EAiBI,WAAA;EACA,aAAA;EACA,+CAAA;EACA,sBAAA;AAFJ;AAKA;EACE,WAAA;EACA,mBAAA;EACA,qBAAA;EACA,kDAAA;EACA,WAAA;EACA,eAAA;EACA,gBAAA;EACA,kBAAA;EACA,eAAA;EACA,oCAAA;AAHF;AAKA;EACE,kBAAA;EACA,eAAA;EACA,sBAAA;EACA,aAAA;AAHF;AAKA;EACE,sBAAA;EACA,WAAA;EACA,YAAA;AAHF;AAKA;EACE,kBAAA;EACA,QAAA;EACA,SAAA;EACA,gCAAA;EACA,WAAA;AAHF;AAKE;EACE,uBAAA;AAHJ;AAKE;EACE,uBAAA;AAHJ","sourcesContent":["@import \"../../style/colors.less\";\n\n.video-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 500px;\n  max-width: 100%;\n  padding: 10px;\n  border: 1px solid #1c1c1c;\n  border-radius: 5px;\n  background-color: #111;\n  transition: transform 0.2s;\n\n  &:hover {\n    background-color: rgb(20, 20, 20);\n  }\n\n  iframe {\n    width: 100%;\n    height: 350px;\n    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n    border-radius: inherit;\n  }\n}\n.video-block__title-wrap {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 0 15px 5px 0;\n  border-bottom: 1px solid rgba(219, 219, 21, 0.205);\n  color: #eee;\n  font-size: 18px;\n  font-weight: 400;\n  text-align: center;\n  cursor: default;\n  box-shadow: inset 0 0 10px 0 inherit;\n}\n.video-block__preview {\n  position: relative;\n  cursor: pointer;\n  border-radius: inherit;\n  height: 350px;\n}\n.video-block__preview-img {\n  border-radius: inherit;\n  width: 100%;\n  height: 100%;\n}\n.video-block__preview-button {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 72px;\n\n  .video-block__preview:hover & {\n    filter: brightness(1.1);\n  }\n  .video-block__preview:active & {\n    filter: brightness(0.9);\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

@@ -2,21 +2,59 @@ import React, { Component } from "react";
 import "./videoBlock.less";
 import { UrlProvider } from "../../js/utils/UrlProvider.js";
 
-function VideoBlock({ title, youtubeVideoId }) {
-  return (
-    <div className="video-block">
-      <div className="video-block__title-wrap">
-        <span>{title}</span>
-      </div>
+class VideoBlock extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoShouldBeLoaded: false,
+    };
+    this.handlePreviewClick = this.handlePreviewClick.bind(this);
+  }
+
+  handlePreviewClick() {
+    this.setState({ videoShouldBeLoaded: true });
+  }
+
+  generateIframe() {
+    return (
       <iframe
-        src={UrlProvider.getUrlToYoutubeIframe(youtubeVideoId)}
-        loading="lazy"
+        src={UrlProvider.getUrlToYoutubeIframe(this.props.youtubeVideoId)}
         frameBorder="0"
-        allowFullScreen="allowFullScreen"
-        srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1><img src=https://img.youtube.com/vi/${youtubeVideoId}/hqdefault.jpg ><span>▶</span></a>`}
+        autoPlay=""
+        allowFullScreen=""
       ></iframe>
-    </div>
-  );
+    );
+  }
+
+  generatePreview() {
+    return (
+      <div className="video-block__preview" onClick={this.handlePreviewClick}>
+        <img
+          src={UrlProvider.getUrlToYoutubePreview(this.props.youtubeVideoId)}
+          alt=""
+          className="video-block__preview-img"
+        ></img>
+        <img
+          src="assets/img/icons/youtube-button.svg"
+          alt=""
+          className="video-block__preview-button"
+        />
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div className="video-block">
+        <div className="video-block__title-wrap">
+          <span>{this.props.title}</span>
+        </div>
+        {this.state.videoShouldBeLoaded
+          ? this.generateIframe()
+          : this.generatePreview()}
+      </div>
+    );
+  }
 }
 
 export { VideoBlock };
