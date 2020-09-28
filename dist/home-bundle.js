@@ -1635,7 +1635,8 @@ function VideoBlock(_ref) {
     src: _js_utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_2__["UrlProvider"].getUrlToYoutubeIframe(youtubeVideoId),
     loading: "lazy",
     frameBorder: "0",
-    allowFullScreen: "allowFullScreen"
+    allowFullScreen: "allowFullScreen",
+    srcDoc: "<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/".concat(youtubeVideoId, "?autoplay=1><img src=https://img.youtube.com/vi/").concat(youtubeVideoId, "/hqdefault.jpg ><span>\u25B6</span></a>")
   }));
 }
 
@@ -1784,9 +1785,6 @@ var VideoCollection = /*#__PURE__*/function (_Component) {
         });
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "a"
-      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-collection"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -13517,7 +13515,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".video-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 500px;\n  max-width: 100%;\n  padding: 10px;\n  border: 1px solid #1c1c1c;\n  border-radius: 5px;\n  background-color: #111;\n  transition: transform 0.2s;\n}\n.video-block:hover {\n  background-color: #141414;\n}\n.video-block iframe {\n  width: 100%;\n  height: 270px;\n  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n  border-radius: inherit;\n}\n.video-block__title-wrap {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 0 15px 5px 0;\n  border-bottom: 1px solid rgba(219, 219, 21, 0.205);\n  color: #eee;\n  font-size: 18px;\n  font-weight: 400;\n  text-align: center;\n  cursor: default;\n  box-shadow: inset 0 0 10px 0 inherit;\n}\n", "",{"version":3,"sources":["webpack://assets/components/VideoBlock/videoBlock.less"],"names":[],"mappings":"AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,yBAAA;EACA,kBAAA;EACA,sBAAA;EACA,0BAAA;AADF;AAGE;EACE,yBAAA;AADJ;AAZA;EAiBI,WAAA;EACA,aAAA;EACA,+CAAA;EACA,sBAAA;AAFJ;AAKA;EACE,WAAA;EACA,mBAAA;EACA,qBAAA;EACA,kDAAA;EACA,WAAA;EACA,eAAA;EACA,gBAAA;EACA,kBAAA;EACA,eAAA;EACA,oCAAA;AAHF","sourcesContent":["@import \"../../style/colors.less\";\n\n.video-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 500px;\n  max-width: 100%;\n  padding: 10px;\n  border: 1px solid #1c1c1c;\n  border-radius: 5px;\n  background-color: #111;\n  transition: transform 0.2s;\n\n  &:hover {\n    background-color: rgb(20, 20, 20);\n  }\n\n  iframe {\n    width: 100%;\n    height: 270px;\n    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n    border-radius: inherit;\n  }\n}\n.video-block__title-wrap {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 0 15px 5px 0;\n  border-bottom: 1px solid rgba(219, 219, 21, 0.205);\n  color: #eee;\n  font-size: 18px;\n  font-weight: 400;\n  text-align: center;\n  cursor: default;\n  box-shadow: inset 0 0 10px 0 inherit;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".video-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 500px;\n  max-width: 100%;\n  padding: 10px;\n  border: 1px solid #1c1c1c;\n  border-radius: 5px;\n  background-color: #111;\n  transition: transform 0.2s;\n}\n.video-block:hover {\n  background-color: #141414;\n}\n.video-block iframe,\n.video-block .iframe {\n  width: 100%;\n  height: 270px;\n  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n  border-radius: inherit;\n}\n.video-block__title-wrap {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 0 15px 5px 0;\n  border-bottom: 1px solid rgba(219, 219, 21, 0.205);\n  color: #eee;\n  font-size: 18px;\n  font-weight: 400;\n  text-align: center;\n  cursor: default;\n  box-shadow: inset 0 0 10px 0 inherit;\n}\n", "",{"version":3,"sources":["webpack://assets/components/VideoBlock/videoBlock.less"],"names":[],"mappings":"AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,yBAAA;EACA,kBAAA;EACA,sBAAA;EACA,0BAAA;AADF;AAGE;EACE,yBAAA;AADJ;AAZA;;EAkBI,WAAA;EACA,aAAA;EACA,+CAAA;EACA,sBAAA;AAFJ;AAKA;EACE,WAAA;EACA,mBAAA;EACA,qBAAA;EACA,kDAAA;EACA,WAAA;EACA,eAAA;EACA,gBAAA;EACA,kBAAA;EACA,eAAA;EACA,oCAAA;AAHF","sourcesContent":["@import \"../../style/colors.less\";\n\n.video-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 500px;\n  max-width: 100%;\n  padding: 10px;\n  border: 1px solid #1c1c1c;\n  border-radius: 5px;\n  background-color: #111;\n  transition: transform 0.2s;\n\n  &:hover {\n    background-color: rgb(20, 20, 20);\n  }\n\n  iframe,\n  .iframe {\n    width: 100%;\n    height: 270px;\n    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);\n    border-radius: inherit;\n  }\n}\n.video-block__title-wrap {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 0 15px 5px 0;\n  border-bottom: 1px solid rgba(219, 219, 21, 0.205);\n  color: #eee;\n  font-size: 18px;\n  font-weight: 400;\n  text-align: center;\n  cursor: default;\n  box-shadow: inset 0 0 10px 0 inherit;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
