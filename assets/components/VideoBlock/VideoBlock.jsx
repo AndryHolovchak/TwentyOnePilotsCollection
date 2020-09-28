@@ -17,28 +17,33 @@ class VideoBlock extends Component {
 
   generateIframe() {
     return (
-      <iframe
-        src={UrlProvider.getUrlToYoutubeIframe(this.props.youtubeVideoId)}
-        frameBorder="0"
-        autoPlay=""
-        allowFullScreen=""
-      ></iframe>
+      <div className="video-block__main-content">
+        <iframe
+          src={UrlProvider.getUrlToYoutubeIframe(this.props.youtubeVideoId)}
+          frameBorder="0"
+          autoPlay=""
+          allowFullScreen=""
+          className="video-block__iframe"
+        ></iframe>
+      </div>
     );
   }
 
   generatePreview() {
     return (
-      <div className="video-block__preview" onClick={this.handlePreviewClick}>
-        <img
-          src={UrlProvider.getUrlToYoutubePreview(this.props.youtubeVideoId)}
-          alt=""
-          className="video-block__preview-img"
-        ></img>
-        <img
-          src="assets/img/icons/youtube-button.svg"
-          alt=""
-          className="video-block__preview-button"
-        />
+      <div className="video-block__main-content">
+        <div className="video-block__preview" onClick={this.handlePreviewClick}>
+          <img
+            src={UrlProvider.getUrlToYoutubePreview(this.props.youtubeVideoId)}
+            alt=""
+            className="video-block__preview-img"
+          ></img>
+          <img
+            src="assets/img/icons/youtube-button.svg"
+            alt=""
+            className="video-block__preview-button"
+          />
+        </div>
       </div>
     );
   }
