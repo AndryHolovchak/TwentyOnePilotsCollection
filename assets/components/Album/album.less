@@ -15,6 +15,7 @@
   padding: 0 5px;
   transition-property: filter, width;
   transition-duration: @album-animation-speed;
+  overflow: hidden;
 }
 
 .album--opened {
@@ -27,7 +28,8 @@
     }
   }
   .album__title {
-    filter: opacity(0);
+    // filter: opacity(0);
+    transform: translateY(-100%);
   }
   .album__content {
     background-color: #0b0b0b;
@@ -69,7 +71,7 @@
   // background-color: rgba(0, 0, 0, 0.85);
   .blurred-bg(rgba(0, 0, 0, 0.85); 4px; 85%);
   user-select: none;
-  transition-property: filter;
+  transition-property: filter, transform;
   transition-duration: inherit;
   font-size: 9vw;
   text-align: center;
