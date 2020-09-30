@@ -1,0 +1,9 @@
+{
+  "name": "Location Sessions",
+  "accentColor": "#d1d1d1",
+  "songs": [
+    { "title": "Chlorine - Mexico City", "id": "73" },
+    { "title": "The Hype - Berlin", "id": "74" },
+    { "title": "Cut My Lip - Brooklyn", "id": "75" }
+  ]
+}

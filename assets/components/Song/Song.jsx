@@ -86,10 +86,10 @@ class Song extends Component {
             cachedColor={accentColor}
             mp3Url={this.mp3Url}
           ></SongCachingButton>
-          <div
+          {/* <div
             className="song__button song__download-button"
             onClick={this.handleDownloadButtonClick}
-          ></div>
+          ></div> */}
         </div>
       </div>
     );

@@ -1,0 +1,9 @@
+{
+  "name": "Singles",
+  "accentColor": "#7f6954",
+  "songs": [
+    { "title": "Cancer", "id": "83" },
+    { "title": "Heathens", "id": "84" },
+    { "title": "Level of Concern", "id": "85" }
+  ]
+}

@@ -14,12 +14,14 @@
   box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.75);
 }
 .tabSwitcher__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 25px;
   flex-grow: 1;
   padding: 3px 10px;
   background-color: #2b2b2b;
   transition: all 0.1s;
-  text-align: center;
 }
 .tabSwitcher__button:hover {
   background-color: desaturate(@accent-color, 20%);

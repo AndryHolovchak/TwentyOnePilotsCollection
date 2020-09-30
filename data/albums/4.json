@@ -2,19 +2,19 @@
   "name": "Trench",
   "accentColor": "#FCE300",
   "songs": [
-    { "title": "Jumpsuit", "id": 59 },
-    { "title": "Levitate", "id": 60 },
-    { "title": "Morph", "id": 61 },
-    { "title": "My Blood", "id": 62 },
-    { "title": "Chlorine", "id": 63 },
-    { "title": "Smithereens", "id": 64 },
-    { "title": "Neon Gravestones", "id": 65 },
-    { "title": "The Hype", "id": 66 },
-    { "title": "Nico And The Niners", "id": 67 },
-    { "title": "Cut My Lip", "id": 68 },
-    { "title": "Bandito", "id": 69 },
-    { "title": "Pet Cheetah", "id": 70 },
-    { "title": "Legend", "id": 71 },
-    { "title": "Leave The City", "id": 72 }
+    { "title": "Jumpsuit", "id": "58" },
+    { "title": "Levitate", "id": "59" },
+    { "title": "Morph", "id": "60" },
+    { "title": "My Blood", "id": "61" },
+    { "title": "Chlorine", "id": "62" },
+    { "title": "Smithereens", "id": "63" },
+    { "title": "Neon Gravestones", "id": "64" },
+    { "title": "The Hype", "id": "65" },
+    { "title": "Nico And The Niners", "id": "66" },
+    { "title": "Cut My Lip", "id": "67" },
+    { "title": "Bandito", "id": "68" },
+    { "title": "Pet Cheetah", "id": "69" },
+    { "title": "Legend", "id": "70" },
+    { "title": "Leave The City", "id": "71" }
   ]
 }
