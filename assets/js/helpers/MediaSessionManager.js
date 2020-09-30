@@ -2,7 +2,7 @@ import { UrlProvider } from "../utils/UrlProvider.js";
 import { instance as player } from "./Player.js";
 
 class MediaSessionManager {
-  static __FAKE_AUDIO_SRC = "../../../data/mp3/justAudioFile.mp3";
+  static __FAKE_AUDIO_SRC = "data/mp3/justAudioFile.mp3";
   supportsMediaSession;
   // _fakeAudio is necessary so that mediaSession does not disappear when changing tracks
   _fakeAudio = new Audio();

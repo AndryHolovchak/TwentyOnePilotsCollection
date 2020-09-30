@@ -2866,7 +2866,7 @@ var MediaSessionManager = /*#__PURE__*/function () {
   return MediaSessionManager;
 }();
 
-_defineProperty(MediaSessionManager, "__FAKE_AUDIO_SRC", "../../../data/mp3/justAudioFile.mp3");
+_defineProperty(MediaSessionManager, "__FAKE_AUDIO_SRC", "data/mp3/justAudioFile.mp3");
 
 var instance = new MediaSessionManager();
 
