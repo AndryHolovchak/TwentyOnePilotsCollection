@@ -14,6 +14,8 @@ class Album extends Component {
     this.state = {
       isInitialized: false,
       isOpened: false,
+      name: "",
+      accentColor: "#00000000",
     };
 
     bindMethods(this, ["handlePreviewClick", "handleHideAnimationEnd"]);
@@ -31,7 +33,11 @@ class Album extends Component {
       (song) =>
         new SongInfo(song, this.props.albumId, albumInfoJson.accentColor)
     );
-    this.setState({ isInitialized: true });
+    this.setState({
+      isInitialized: true,
+      name: albumInfoJson.name,
+      accentColor: albumInfoJson.accentColor,
+    });
   }
 
   handleHideAnimationEnd(e) {
@@ -66,14 +72,22 @@ class Album extends Component {
 
     return (
       <div className={albumClassName}>
-        <img
-          src={UrlProvider.getUrlToAlbumCover(this.props.albumId, 600)}
-          className="album__preview-cover"
-          width="32px"
-          loading="lazy"
-          alt="cover"
-          onClick={this.handlePreviewClick}
-        />
+        <div className="album__preview" onClick={this.handlePreviewClick}>
+          <span
+            className="album__title"
+            style={{ borderBottom: `1px solid ${this.state.accentColor}` }}
+          >
+            {this.state.name}
+          </span>
+
+          <img
+            src={UrlProvider.getUrlToAlbumCover(this.props.albumId, 600)}
+            className="album__cover"
+            width="32px"
+            loading="lazy"
+            alt="cover"
+          />
+        </div>
         <div
           className={albumContentClassName}
           onAnimationEnd={this.handleHideAnimationEnd}
