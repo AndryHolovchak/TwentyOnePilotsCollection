@@ -1,7 +1,7 @@
 const path = require("path");
 module.exports = {
-  mode: "production",
-  entry: "./assets/js/HomePage.jsx",
+  mode: "development",
+  entry: "./src/homeEntry.js",
   resolve: { roots: [path.resolve("./")] },
 
   output: {

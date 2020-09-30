@@ -1,6 +1,6 @@
 import { bindMethods } from "../utils/BindMethods.js";
 import { PlayerPlaylist } from "./PlayerPlaylist.js";
-import { ExtendedEvent } from "../helpers/ExtendedEvent.js";
+import { ExtendedEvent } from "./ExtendedEvent.js";
 import { UrlProvider } from "../utils/UrlProvider.js";
 
 class Player {
