@@ -22,7 +22,7 @@ class VideoBlock extends Component {
           src={UrlProvider.getUrlToYoutubeIframe(this.props.youtubeVideoId)}
           frameBorder="0"
           autoPlay=""
-          allowFullScreen=""
+          allowFullScreen="1"
           className="video-block__iframe"
         ></iframe>
       </div>
