@@ -1534,43 +1534,103 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tabsContent_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabsContent.less */ "./assets/components/TabsContent/tabsContent.less");
 /* harmony import */ var _tabsContent_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_tabsContent_less__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _js_hooks_useTabsSystemListener_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../js/hooks/useTabsSystemListener.jsx */ "./assets/js/hooks/useTabsSystemListener.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
 
 
-function TabsContent(_ref) {
-  var children = _ref.children,
-      tabsSystem = _ref.tabsSystem;
-  var nodeRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-  Object(_js_hooks_useTabsSystemListener_jsx__WEBPACK_IMPORTED_MODULE_3__["useTabsSystemListener"])(tabsSystem);
 
-  var getWrappedChildren = function getWrappedChildren() {
-    return children.map(function (children, i) {
-      var className = "tabs-content__item-wrap";
+var TabsContent = /*#__PURE__*/function (_Component) {
+  _inherits(TabsContent, _Component);
 
-      if (tabsSystem.activeTabIndex === i) {
-        className += " tabs-content__item-wrap--active";
+  var _super = _createSuper(TabsContent);
+
+  function TabsContent(props) {
+    var _this;
+
+    _classCallCheck(this, TabsContent);
+
+    _this = _super.call(this, props);
+    _this.nodeRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef(null);
+    _this.scrollYPositions = [];
+    _this.handleActiveTabIndexChange = _this.handleActiveTabIndexChange.bind(_assertThisInitialized(_this));
+
+    _this.props.tabsSystem.addActiveTabIndexListener(_this.handleActiveTabIndexChange);
+
+    return _this;
+  }
+
+  _createClass(TabsContent, [{
+    key: "handleActiveTabIndexChange",
+    value: function handleActiveTabIndexChange(prevTabIndex) {
+      if (prevTabIndex != -1 && this.nodeRef.current) {
+        this.scrollYPositions[prevTabIndex] = this.nodeRef.current.scrollTop;
+      }
+
+      this.forceUpdate();
+    }
+  }, {
+    key: "getWrappedChildren",
+    value: function getWrappedChildren() {
+      var _this2 = this;
+
+      return this.props.children.map(function (children, i) {
+        var className = "tabs-content__item-wrap";
+
+        if (_this2.props.tabsSystem.activeTabIndex === i) {
+          className += " tabs-content__item-wrap--active";
+        }
+
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: i,
+          className: className
+        }, children);
+      });
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.tabsSystem.removeActiveTabIndexListener(this.handleActiveTabIndexChange);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var childs = this.getWrappedChildren();
+
+      if (this.nodeRef.current) {
+        this.nodeRef.current.scrollTop = this.scrollYPositions[this.props.tabsSystem.activeTabIndex] || 0;
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        key: i,
-        className: className
-      }, children);
-    });
-  };
+        ref: this.nodeRef,
+        className: "tabs-content"
+      }, childs);
+    }
+  }]);
 
-  var childs = getWrappedChildren();
-
-  if (nodeRef.current) {
-    nodeRef.current.scrollTop = 0;
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    ref: nodeRef,
-    className: "tabs-content"
-  }, childs);
-}
+  return TabsContent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
 
@@ -3304,9 +3364,9 @@ var TabsSystem = /*#__PURE__*/function () {
     _classCallCheck(this, TabsSystem);
 
     this._tabCount = tabCount;
-    this._activeTabIndex = activeTabIndex;
-    this._prevActiveTabIndex = -1;
     this._activeTabIndexListeners = [];
+    this._prevActiveTabIndex = -1;
+    this._activeTabIndex = activeTabIndex;
   }
 
   _createClass(TabsSystem, [{
@@ -3327,7 +3387,7 @@ var TabsSystem = /*#__PURE__*/function () {
     key: "_triggerActiveTabListeners",
     value: function _triggerActiveTabListeners() {
       for (var i = 0; i < this._activeTabIndexListeners.length; i++) {
-        this._activeTabIndexListeners[i]();
+        this._activeTabIndexListeners[i](this._prevActiveTabIndex, this._activeTabIndex);
       }
     }
   }, {
@@ -13387,7 +13447,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 50px;\n  padding: 10px 0;\n  z-index: 1000;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  background-color: #141414;\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n}\n@supports (backdrop-filter: blur()) {\n  .header {\n    backdrop-filter: blur(15px);\n    background-color: #141414d0;\n  }\n}\n.header__row {\n  height: 100%;\n}\n.header__inner {\n  position: relative;\n}\n.header__inner .tab-switcher {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  max-width: 70%;\n}\n.header__logo {\n  max-width: 10%;\n}\n", "",{"version":3,"sources":["webpack://assets/components/Header/header.less"],"names":[],"mappings":"AAEA;EACE,eAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,WAAA;EACA,yBAAA;EACA,uDAAA;EACA,oDAAA;EACA,+CAAA;AADF;AAGE;EAAA;IACE,2BAAA;IACA,2BAAA;EAAF;AACF;AAEA;EACE,YAAA;AAAF;AAEA;EACE,kBAAA;AAAF;AADA;EAII,kBAAA;EACA,SAAA;EACA,QAAA;EACA,gCAAA;EACA,cAAA;AAAJ;AAGA;EACE,cAAA;AADF","sourcesContent":["@import \"../../style/sizes.less\";\n\n.header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: @header-height;\n  padding: 10px 0;\n  z-index: 1000;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  background-color: #141414;\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n\n  @supports (backdrop-filter: blur()) {\n    backdrop-filter: blur(15px);\n    background-color: #141414d0;\n  }\n}\n.header__row {\n  height: 100%;\n}\n.header__inner {\n  position: relative;\n\n  .tab-switcher {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    max-width: 70%;\n  }\n}\n.header__logo {\n  max-width: 10%;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".header {\n  background-color: #141414;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 50px;\n  padding: 10px 0;\n  z-index: 1000;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n}\n@supports (backdrop-filter: blur()) {\n  .header {\n    backdrop-filter: blur(10px);\n    background-color: rgba(20, 20, 20, 0.9);\n  }\n}\n.header__row {\n  height: 100%;\n}\n.header__inner {\n  position: relative;\n}\n.header__inner .tab-switcher {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  max-width: 70%;\n}\n.header__logo {\n  max-width: 10%;\n}\n", "",{"version":3,"sources":["webpack://assets/components/Header/header.less","webpack://assets/style/mixins.less"],"names":[],"mappings":"AAGA;ECFE,yBAAA;EDIA,eAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,WAAA;EACA,uDAAA;EACA,oDAAA;EACA,+CAAA;AAFF;ACbE;EAAA;IACE,2BAAA;IACA,uCAAA;EDgBF;AACF;AAFA;EACE,YAAA;AAIF;AAFA;EACE,kBAAA;AAIF;AALA;EAII,kBAAA;EACA,SAAA;EACA,QAAA;EACA,gCAAA;EACA,cAAA;AAIJ;AADA;EACE,cAAA;AAGF","sourcesContent":["@import \"../../style/sizes.less\";\n@import \"../../style/mixins.less\";\n\n.header {\n  .blurred-bg(#141414);\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: @header-height;\n  padding: 10px 0;\n  z-index: 1000;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n}\n.header__row {\n  height: 100%;\n}\n.header__inner {\n  position: relative;\n\n  .tab-switcher {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    max-width: 70%;\n  }\n}\n.header__logo {\n  max-width: 10%;\n}\n",".blurred-bg(@color; @intensity: 10px) {\n  background-color: @color;\n  @supports (backdrop-filter: blur()) {\n    backdrop-filter: blur(@intensity);\n    background-color: fade(@color, 90%);\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -13430,7 +13490,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_g
 var ___CSS_LOADER_URL_REPLACEMENT_4___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_img_icons_play_svg__WEBPACK_IMPORTED_MODULE_6__["default"]);
 var ___CSS_LOADER_URL_REPLACEMENT_5___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_img_icons_next_svg__WEBPACK_IMPORTED_MODULE_7__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".player {\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 10000;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  padding: 15px;\n  max-width: 800px;\n  overflow: hidden;\n  height: 150px;\n  margin: 0 auto;\n  border-radius: 5px;\n  background-color: #0c0c0c;\n  box-shadow: 0 2px 8px 0px #000;\n  border: 1px solid rgba(126, 126, 126, 0.24);\n}\n@supports (backdrop-filter: blur()) {\n  .player {\n    backdrop-filter: blur(15px);\n    background-color: #0c0c0cec;\n  }\n}\n.player .song {\n  height: 40px;\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.player__controll-panel {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  max-width: 400px;\n}\n.player__button {\n  width: 18px;\n  height: 18px;\n}\n.player__button:hover {\n  filter: brightness(1.3);\n}\n.player__button:active {\n  filter: brightness(1);\n}\n.player__shuffle-button:not(.player__button--activated):hover,\n.player__repeat-button:not(.player__button--activated):hover {\n  filter: grayscale(30%);\n}\n.player__shuffle-button:not(.player__button--activated):not(:hover),\n.player__repeat-button:not(.player__button--activated):not(:hover),\n.player__shuffle-button:not(.player__button--activated):active,\n.player__repeat-button:not(.player__button--activated):active {\n  filter: grayscale(100%);\n}\n.player__shuffle-button {\n  width: 22px;\n  height: 22px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.player__repeat-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n.player__main-controlls {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  width: 200px;\n  max-width: 200px;\n  margin: 0 auto;\n  padding: 1px 0;\n}\n.player__previous-audio-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n}\n.player__pause-button {\n  width: 32px;\n  height: 32px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n}\n.player__play-button {\n  width: 32px;\n  height: 32px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n}\n.player__next-audio-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\n}\n", "",{"version":3,"sources":["webpack://assets/components/Player/player.less"],"names":[],"mappings":"AAGA;EACE,eAAA;EACA,SAAA;EACA,SAAA;EACA,2BAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,aAAA;EACA,gBAAA;EACA,gBAAA;EACA,aAAA;EACA,cAAA;EACA,kBAAA;EACA,yBAAA;EACA,8BAAA;EACA,2CAAA;AAFF;AAIE;EAAA;IACE,2BAAA;IACA,2BAAA;EADF;AACF;AAvBA;EA2BI,YAAA;EACA,gBAAA;EACA,mBAAA;AADJ;AAKA;EACE,aAAA;EACA,mBAAA;EACA,WAAA;EACA,gBAAA;AAHF;AAMA;EACE,WAAA;EACA,YAAA;AAJF;AAME;EACE,uBAAA;AAJJ;AAME;EACE,qBAAA;AAJJ;AAUI;;EACE,sBAAA;AAPN;AAUI;;;;EAEE,uBAAA;AANN;AAUA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AARF;AAUA;EACE,gDAAA;AARF;AAUA;EACE,aAAA;EACA,mBAAA;EACA,6BAAA;EACA,mBAAA;EACA,YAAA;EACA,gBAAA;EACA,cAAA;EACA,cAAA;AARF;AAUA;EACE,gDAAA;AARF;AAWA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AATF;AAYA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AAVF;AAaA;EACE,gDAAA;AAXF","sourcesContent":["@import \"../../style/colors.less\";\n@import \"../../style/sizes.less\";\n\n.player {\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 10000;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  padding: 15px;\n  max-width: 800px;\n  overflow: hidden;\n  height: @player-height;\n  margin: 0 auto;\n  border-radius: 5px;\n  background-color: #0c0c0c;\n  box-shadow: 0 2px 8px 0px #000;\n  border: 1px solid rgba(126, 126, 126, 0.24);\n\n  @supports (backdrop-filter: blur()) {\n    backdrop-filter: blur(15px);\n    background-color: #0c0c0cec;\n  }\n\n  .song {\n    height: 40px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n  }\n}\n\n.player__controll-panel {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  max-width: 400px;\n}\n\n.player__button {\n  width: 18px;\n  height: 18px;\n\n  &:hover {\n    filter: brightness(1.3);\n  }\n  &:active {\n    filter: brightness(1);\n  }\n}\n.player__shuffle-button,\n.player__repeat-button {\n  &:not(.player__button--activated) {\n    &:hover {\n      filter: grayscale(30%);\n    }\n\n    &:not(:hover),\n    &:active {\n      filter: grayscale(100%);\n    }\n  }\n}\n.player__shuffle-button {\n  width: 22px;\n  height: 22px;\n  content: url(\"../../img/icons/shuffle.svg\");\n}\n.player__repeat-button {\n  content: url(\"../../img/icons/repeat.svg\");\n}\n.player__main-controlls {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  width: 200px;\n  max-width: 200px;\n  margin: 0 auto;\n  padding: 1px 0;\n}\n.player__previous-audio-button {\n  content: url(\"../../img/icons/previous.svg\");\n}\n\n.player__pause-button {\n  width: 32px;\n  height: 32px;\n  content: url(\"../../img/icons/pause.svg\");\n}\n\n.player__play-button {\n  width: 32px;\n  height: 32px;\n  content: url(\"../../img/icons/play.svg\");\n}\n\n.player__next-audio-button {\n  content: url(\"../../img/icons/next.svg\");\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".player {\n  background-color: #0c0c0c;\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 10000;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  padding: 15px;\n  max-width: 800px;\n  overflow: hidden;\n  height: 150px;\n  margin: 0 auto;\n  border-radius: 5px;\n  box-shadow: 0 2px 8px 0px #000;\n  border: 1px solid rgba(126, 126, 126, 0.24);\n}\n@supports (backdrop-filter: blur()) {\n  .player {\n    backdrop-filter: blur(10px);\n    background-color: rgba(12, 12, 12, 0.9);\n  }\n}\n.player .song {\n  height: 40px;\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.player__controll-panel {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  max-width: 400px;\n}\n.player__button {\n  width: 18px;\n  height: 18px;\n}\n.player__button:hover {\n  filter: brightness(1.3);\n}\n.player__button:active {\n  filter: brightness(1);\n}\n.player__shuffle-button:not(.player__button--activated):hover,\n.player__repeat-button:not(.player__button--activated):hover {\n  filter: grayscale(30%);\n}\n.player__shuffle-button:not(.player__button--activated):not(:hover),\n.player__repeat-button:not(.player__button--activated):not(:hover),\n.player__shuffle-button:not(.player__button--activated):active,\n.player__repeat-button:not(.player__button--activated):active {\n  filter: grayscale(100%);\n}\n.player__shuffle-button {\n  width: 22px;\n  height: 22px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.player__repeat-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n.player__main-controlls {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  width: 200px;\n  max-width: 200px;\n  margin: 0 auto;\n  padding: 1px 0;\n}\n.player__previous-audio-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n}\n.player__pause-button {\n  width: 32px;\n  height: 32px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n}\n.player__play-button {\n  width: 32px;\n  height: 32px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n}\n.player__next-audio-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\n}\n", "",{"version":3,"sources":["webpack://assets/components/Player/player.less","webpack://assets/style/mixins.less"],"names":[],"mappings":"AAIA;ECHE,yBAAA;EDKA,eAAA;EACA,SAAA;EACA,SAAA;EACA,2BAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,aAAA;EACA,gBAAA;EACA,gBAAA;EACA,aAAA;EACA,cAAA;EACA,kBAAA;EACA,8BAAA;EACA,2CAAA;AAHF;AClBE;EAAA;IACE,2BAAA;IACA,uCAAA;EDqBF;AACF;AAtBA;EAsBI,YAAA;EACA,gBAAA;EACA,mBAAA;AAGJ;AACA;EACE,aAAA;EACA,mBAAA;EACA,WAAA;EACA,gBAAA;AACF;AAEA;EACE,WAAA;EACA,YAAA;AAAF;AAEE;EACE,uBAAA;AAAJ;AAEE;EACE,qBAAA;AAAJ;AAMI;;EACE,sBAAA;AAHN;AAMI;;;;EAEE,uBAAA;AAFN;AAMA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AAJF;AAMA;EACE,gDAAA;AAJF;AAMA;EACE,aAAA;EACA,mBAAA;EACA,6BAAA;EACA,mBAAA;EACA,YAAA;EACA,gBAAA;EACA,cAAA;EACA,cAAA;AAJF;AAMA;EACE,gDAAA;AAJF;AAOA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AALF;AAQA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AANF;AASA;EACE,gDAAA;AAPF","sourcesContent":["@import \"../../style/colors.less\";\n@import \"../../style/sizes.less\";\n@import \"../../style/mixins.less\";\n\n.player {\n  .blurred-bg(#0c0c0c);\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 10000;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  padding: 15px;\n  max-width: 800px;\n  overflow: hidden;\n  height: @player-height;\n  margin: 0 auto;\n  border-radius: 5px;\n  box-shadow: 0 2px 8px 0px #000;\n  border: 1px solid rgba(126, 126, 126, 0.24);\n\n  .song {\n    height: 40px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n  }\n}\n\n.player__controll-panel {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  max-width: 400px;\n}\n\n.player__button {\n  width: 18px;\n  height: 18px;\n\n  &:hover {\n    filter: brightness(1.3);\n  }\n  &:active {\n    filter: brightness(1);\n  }\n}\n.player__shuffle-button,\n.player__repeat-button {\n  &:not(.player__button--activated) {\n    &:hover {\n      filter: grayscale(30%);\n    }\n\n    &:not(:hover),\n    &:active {\n      filter: grayscale(100%);\n    }\n  }\n}\n.player__shuffle-button {\n  width: 22px;\n  height: 22px;\n  content: url(\"../../img/icons/shuffle.svg\");\n}\n.player__repeat-button {\n  content: url(\"../../img/icons/repeat.svg\");\n}\n.player__main-controlls {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  width: 200px;\n  max-width: 200px;\n  margin: 0 auto;\n  padding: 1px 0;\n}\n.player__previous-audio-button {\n  content: url(\"../../img/icons/previous.svg\");\n}\n\n.player__pause-button {\n  width: 32px;\n  height: 32px;\n  content: url(\"../../img/icons/pause.svg\");\n}\n\n.player__play-button {\n  width: 32px;\n  height: 32px;\n  content: url(\"../../img/icons/play.svg\");\n}\n\n.player__next-audio-button {\n  content: url(\"../../img/icons/next.svg\");\n}\n",".blurred-bg(@color; @intensity: 10px) {\n  background-color: @color;\n  @supports (backdrop-filter: blur()) {\n    backdrop-filter: blur(@intensity);\n    background-color: fade(@color, 90%);\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

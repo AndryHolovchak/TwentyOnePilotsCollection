@@ -1,9 +1,9 @@
 class TabsSystem {
   constructor(tabCount, activeTabIndex = 0) {
     this._tabCount = tabCount;
-    this._activeTabIndex = activeTabIndex;
-    this._prevActiveTabIndex = -1;
     this._activeTabIndexListeners = [];
+    this._prevActiveTabIndex = -1;
+    this._activeTabIndex = activeTabIndex;
   }
   get activeTabIndex() {
     return this._activeTabIndex;
@@ -29,7 +29,10 @@ class TabsSystem {
   }
   _triggerActiveTabListeners() {
     for (let i = 0; i < this._activeTabIndexListeners.length; i++) {
-      this._activeTabIndexListeners[i]();
+      this._activeTabIndexListeners[i](
+        this._prevActiveTabIndex,
+        this._activeTabIndex
+      );
     }
   }
 }

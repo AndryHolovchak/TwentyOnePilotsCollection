@@ -1,0 +1,7 @@
+.blurred-bg(@color; @intensity: 10px) {
+  background-color: @color;
+  @supports (backdrop-filter: blur()) {
+    backdrop-filter: blur(@intensity);
+    background-color: fade(@color, 90%);
+  }
+}

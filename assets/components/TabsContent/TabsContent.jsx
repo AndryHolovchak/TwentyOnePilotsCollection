@@ -1,16 +1,32 @@
-import React, { useRef } from "react";
+import React, { Component, useRef } from "react";
 import ReactDOM from "react-dom";
 import "./tabsContent.less";
 import { useTabsSystemListener } from "../../js/hooks/useTabsSystemListener.jsx";
 
-function TabsContent({ children, tabsSystem }) {
-  const nodeRef = useRef(null);
-  useTabsSystemListener(tabsSystem);
+class TabsContent extends Component {
+  constructor(props) {
+    super(props);
+    this.nodeRef = React.createRef(null);
+    this.scrollYPositions = [];
+    this.handleActiveTabIndexChange = this.handleActiveTabIndexChange.bind(
+      this
+    );
+    this.props.tabsSystem.addActiveTabIndexListener(
+      this.handleActiveTabIndexChange
+    );
+  }
 
-  let getWrappedChildren = () => {
-    return children.map((children, i) => {
+  handleActiveTabIndexChange(prevTabIndex) {
+    if (prevTabIndex != -1 && this.nodeRef.current) {
+      this.scrollYPositions[prevTabIndex] = this.nodeRef.current.scrollTop;
+    }
+    this.forceUpdate();
+  }
+
+  getWrappedChildren() {
+    return this.props.children.map((children, i) => {
       let className = "tabs-content__item-wrap";
-      if (tabsSystem.activeTabIndex === i) {
+      if (this.props.tabsSystem.activeTabIndex === i) {
         className += " tabs-content__item-wrap--active";
       }
       return (
@@ -19,18 +35,27 @@ function TabsContent({ children, tabsSystem }) {
         </div>
       );
     });
-  };
-
-  let childs = getWrappedChildren();
-
-  if (nodeRef.current) {
-    nodeRef.current.scrollTop = 0;
   }
 
-  return (
-    <div ref={nodeRef} className="tabs-content">
-      {childs}
-    </div>
-  );
+  componentWillUnmount() {
+    this.props.tabsSystem.removeActiveTabIndexListener(
+      this.handleActiveTabIndexChange
+    );
+  }
+
+  render() {
+    let childs = this.getWrappedChildren();
+
+    if (this.nodeRef.current) {
+      this.nodeRef.current.scrollTop =
+        this.scrollYPositions[this.props.tabsSystem.activeTabIndex] || 0;
+    }
+
+    return (
+      <div ref={this.nodeRef} className="tabs-content">
+        {childs}
+      </div>
+    );
+  }
 }
 export { TabsContent };
