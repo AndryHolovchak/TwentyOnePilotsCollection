@@ -15,7 +15,7 @@ class Album extends Component {
       isInitialized: false,
       isOpened: false,
       name: "",
-      accentColor: "#00000000",
+      accentColor: "#fff",
     };
 
     bindMethods(this, ["handlePreviewClick", "handleHideAnimationEnd"]);
