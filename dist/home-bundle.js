@@ -9788,7 +9788,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".with-hidden-scrollbar {\n  scrollbar-width: none !important;\n}\n.with-hidden-scrollbar::-webkit-scrollbar {\n  width: 0px;\n}\n.with-customized-scrollbar {\n  scrollbar-width: thin;\n  scrollbar-color: #c9c93d transparent;\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.with-customized-scrollbar::-webkit-scrollbar {\n  width: 5px;\n}\n.with-customized-scrollbar::-webkit-scrollbar-track {\n  background: transparent;\n}\n.with-customized-scrollbar::-webkit-scrollbar-thumb {\n  background: #c9c93d;\n  border-radius: 5px;\n}\n.with-customized-scrollbar::-webkit-scrollbar-thumb:hover {\n  background: #cfcf51;\n}\n.album {\n  width: 500px;\n  max-width: 100%;\n  padding: 0 5px;\n  transition-property: filter, width;\n  transition-duration: 0.3s;\n  overflow: hidden;\n}\n.album--opened {\n  width: 600px;\n}\n.album--opened .album__cover {\n  filter: none;\n  box-shadow: 0px 18px 11px 1px rgba(0, 0, 0, 0.89);\n}\n.album--opened .album__cover:hover {\n  filter: brightness(1.1);\n}\n.album--opened .album__title {\n  transform: translateY(-100%);\n}\n.album--opened .album__content {\n  background-color: #0b0b0b;\n  animation: show 0.3s;\n  box-shadow: 0 0 5px 2px #000;\n}\n.album--closed .album__cover:hover {\n  filter: none;\n}\n.album--closed .album__content {\n  animation: hide 0.3s;\n}\n.album__preview {\n  position: relative;\n  transition-duration: inherit;\n}\n.album__title {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  box-shadow: 0px 9px 10px -6px rgba(0, 0, 0, 0.84);\n  padding: 5px 10px;\n  z-index: 2;\n  font-weight: 700;\n  letter-spacing: 8px;\n  color: #cfcfcf;\n  background-color: rgba(0, 0, 0, 0.85);\n  user-select: none;\n  transition-property: filter, transform;\n  transition-duration: inherit;\n  font-size: 9vw;\n  text-align: center;\n}\n@supports (backdrop-filter: blur()) {\n  .album__title {\n    backdrop-filter: blur(4px);\n    background-color: rgba(0, 0, 0, 0.85);\n  }\n}\n@media only screen and (min-width: 500px) {\n  .album__title {\n    font-size: 40px;\n  }\n}\n.album__cover {\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 5px;\n  transition-property: transform, filter;\n  transition-duration: inherit;\n  filter: grayscale(70%);\n}\n.album__cover:active {\n  transform: scale(0.99);\n}\n.album__content {\n  scrollbar-width: none !important;\n  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.61);\n  position: relative;\n  z-index: 0;\n  width: 98%;\n  margin: 0 auto;\n  margin-top: -25px;\n  padding: 20px 8px;\n  border: 1px solid #1c1c1c54;\n  border-radius: 5px;\n  overflow-y: scroll;\n  background-color: #0f0f0f;\n  will-change: display;\n}\n.album__content::-webkit-scrollbar {\n  width: 0px;\n}\n.album__content:after {\n  content: \"\";\n  display: block;\n  height: 20px;\n  width: 100%;\n}\n@keyframes show {\n  from {\n    filter: opacity(0);\n  }\n  to {\n    filter: opacity(1);\n  }\n}\n@keyframes hide {\n  from {\n    filter: opacity(1);\n  }\n  to {\n    filter: opacity(0);\n  }\n}\n", "",{"version":3,"sources":["webpack://src/style/customScrollbars.less","webpack://src/components/Album/album.less","webpack://src/style/mixins.less"],"names":[],"mappings":"AAEA;EACE,gCAAA;ACDF;ADEE;EACE,UAAA;ACAJ;ADGA;EACE,qBAAA;EACA,oCAAA;ECDA,UAAU;EACV,WAAW;EACX,oBAAoB;AACtB;ADAE;EACE,UAAA;ACEJ;ADEE;EACE,uBAAA;ACAJ;ADIE;EACE,mBAAA;EACA,kBAAA;ACFJ;ADME;EACE,mBAAA;ACJJ;AAdA;EACE,YAAA;EACA,eAAA;EACA,cAAA;EACA,kCAAA;EACA,yBAAA;EACA,gBAAA;AAgBF;AAbA;EACE,YAAA;AAeF;AAhBA;EAII,YAAA;EACA,iDAAA;AAeJ;AAdI;EACE,uBAAA;AAgBN;AAvBA;EAYI,4BAAA;AAcJ;AA1BA;EAeI,yBAAA;EAEA,oBAAA;EACA,4BAAA;AAaJ;AARI;EACE,YAAA;AAUN;AAbA;EAQI,oBAAA;AAQJ;AAJA;EACE,kBAAA;EACA,4BAAA;AAMF;AAHA;EACE,WAAA;EACA,kBAAA;EACA,MAAA;EACA,iDAAA;EACA,iBAAA;EACA,UAAA;EACA,gBAAA;EACA,mBAAA;EACA,cAAA;EClEA,qCAAA;EDoEA,iBAAA;EACA,sCAAA;EACA,4BAAA;EACA,cAAA;EACA,kBAAA;AAKF;AC5EE;EAAA;IACE,0BAAA;IACA,qCAAA;ED+EF;AACF;AATE;EAAA;IACE,eAAA;EAYF;AACF;AATA;EACE,kBAAA;EACA,UAAA;EACA,WAAA;EACA,kBAAA;EACA,sCAAA;EACA,4BAAA;EACA,sBAAA;AAWF;AATE;EACE,sBAAA;AAWJ;AAPA;ED3FE,gCAAA;ECEA,+CAAA;EA4FA,kBAAA;EACA,UAAA;EACA,UAAA;EACA,cAAA;EACA,iBAAA;EACA,iBAAA;EACA,2BAAA;EACA,kBAAA;EACA,kBAAA;EACA,yBAAA;EACA,oBAAA;AASF;ADhHE;EACE,UAAA;ACkHJ;AAVE;EACE,WAAA;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAYJ;AARA;EACE;IAEE,kBAAA;EASF;EANA;IAGE,kBAAA;EAMF;AACF;AAJA;EACE;IAGE,kBAAA;EAIF;EAFA;IAGE,kBAAA;EAEF;AACF","sourcesContent":["@import \"./colors.less\";\n\n.with-hidden-scrollbar {\n  scrollbar-width: none !important;\n  &::-webkit-scrollbar {\n    width: 0px;\n  }\n}\n.with-customized-scrollbar {\n  scrollbar-width: thin;\n  scrollbar-color: @accent-color transparent;\n\n  &::-webkit-scrollbar {\n    width: 5px;\n  }\n\n  /* Track */\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  /* Handle */\n  &::-webkit-scrollbar-thumb {\n    background: @accent-color;\n    border-radius: 5px;\n  }\n\n  /* Handle on hover */\n  &::-webkit-scrollbar-thumb:hover {\n    background: lighten(@accent-color, 5%);\n  }\n}\n","@import \"../../style/colors.less\";\n@import \"../../style/customScrollbars.less\";\n@import \"../../style/mixins.less\";\n\n.album-shadow() {\n  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.61);\n}\n\n@album-animation-speed: 0.3s;\n@album-width: 500px;\n\n.album {\n  width: @album-width;\n  max-width: 100%;\n  padding: 0 5px;\n  transition-property: filter, width;\n  transition-duration: @album-animation-speed;\n  overflow: hidden;\n}\n\n.album--opened {\n  width: 600px;\n\n  .album__cover {\n    filter: none;\n    box-shadow: 0px 18px 11px 1px rgba(0,0,0,0.89);\n    &:hover {\n      filter: brightness(1.1);\n    }\n  }\n  .album__title {\n    // filter: opacity(0);\n    transform: translateY(-100%);\n  }\n  .album__content {\n    background-color: #0b0b0b;\n    // animation: show 0.9s;\n    animation: show @album-animation-speed;\n    box-shadow: 0 0 5px 2px #000;\n  }\n}\n.album--closed {\n  .album__cover {\n    &:hover {\n      filter: none;\n    }\n  }\n\n  .album__content {\n    animation: hide @album-animation-speed;\n  }\n}\n\n.album__preview {\n  position: relative;\n  transition-duration: inherit;\n}\n\n.album__title {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  box-shadow: 0px 9px 10px -6px rgba(0, 0, 0, 0.84);\n  padding: 5px 10px;\n  z-index: 2;\n  font-weight: 700;\n  letter-spacing: 8px;\n  color: rgb(207, 207, 207);\n   .blurred-bg(rgba(0, 0, 0, 0.85); 4px; 85%);\n  user-select: none;\n  transition-property: filter, transform;\n  transition-duration: inherit;\n  font-size: 9vw;\n  text-align: center;\n\n  @media only screen and (min-width: @album-width) {\n    font-size: 40px;\n  }\n}\n\n.album__cover {\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 5px;\n  transition-property: transform, filter;\n  transition-duration: inherit;\n  filter: grayscale(70%);\n\n  &:active {\n    transform: scale(0.99);\n  }\n}\n\n.album__content {\n  .with-hidden-scrollbar();\n  .album-shadow();\n  position: relative;\n  z-index: 0;\n  width: 98%;\n  margin: 0 auto;\n  margin-top: -25px;\n  padding: 20px 8px;\n  border: 1px solid #1c1c1c54;\n  border-radius: 5px;\n  overflow-y: scroll;\n  background-color: #0f0f0f;\n  will-change: display;\n  //bottom padding\n  &:after {\n    content: \"\";\n    display: block;\n    height: 20px;\n    width: 100%;\n  }\n}\n\n@keyframes show {\n  from {\n    // max-height: 0;\n    filter: opacity(0);\n    // transform: scale(0);\n  }\n  to {\n    // transform: scale(1);\n    // max-height: 100%;\n    filter: opacity(1);\n  }\n}\n@keyframes hide {\n  from {\n    // transform: scale(1);\n    //max-height: 100%;\n    filter: opacity(1);\n  }\n  to {\n    // transform: scale(0);\n    //    max-height: 0;\n    filter: opacity(0);\n  }\n}\n",".blurred-bg(@color; @intensity: 10px; @opacity: 90%) {\n  background-color: @color;\n  @supports (backdrop-filter: blur()) {\n    backdrop-filter: blur(@intensity);\n    background-color: fade(@color, @opacity);\n  }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".with-hidden-scrollbar {\n  scrollbar-width: none !important;\n}\n.with-hidden-scrollbar::-webkit-scrollbar {\n  width: 0px;\n}\n.with-customized-scrollbar {\n  scrollbar-width: thin;\n  scrollbar-color: #c9c93d transparent;\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.with-customized-scrollbar::-webkit-scrollbar {\n  width: 5px;\n}\n.with-customized-scrollbar::-webkit-scrollbar-track {\n  background: transparent;\n}\n.with-customized-scrollbar::-webkit-scrollbar-thumb {\n  background: #c9c93d;\n  border-radius: 5px;\n}\n.with-customized-scrollbar::-webkit-scrollbar-thumb:hover {\n  background: #cfcf51;\n}\n.album {\n  width: 500px;\n  max-width: 100%;\n  padding: 0 5px;\n  transition-property: filter, width;\n  transition-duration: 0.3s;\n  overflow: hidden;\n}\n.album--opened {\n  width: 600px;\n}\n.album--opened .album__cover {\n  filter: none;\n  box-shadow: 0px 35px 17px -17px rgba(0, 0, 0, 0.75);\n}\n.album--opened .album__cover:hover {\n  filter: brightness(1.1);\n}\n.album--opened .album__title {\n  transform: translateY(-100%);\n}\n.album--opened .album__content {\n  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.61);\n  margin-bottom: 5px;\n  background-color: #0b0b0b;\n  animation: show 0.3s;\n}\n.album--closed .album__cover:hover {\n  filter: none;\n}\n.album--closed .album__content {\n  animation: hide 0.3s;\n}\n.album__preview {\n  position: relative;\n  transition-duration: inherit;\n}\n.album__title {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  box-shadow: 0px 9px 10px -6px rgba(0, 0, 0, 0.84);\n  padding: 5px 10px;\n  z-index: 2;\n  font-weight: 700;\n  letter-spacing: 8px;\n  color: #cfcfcf;\n  background-color: rgba(0, 0, 0, 0.85);\n  user-select: none;\n  transition-property: filter, transform;\n  transition-duration: inherit;\n  font-size: 9vw;\n  text-align: center;\n}\n@media only screen and (min-width: 500px) {\n  .album__title {\n    font-size: 40px;\n  }\n}\n.album__cover {\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 5px;\n  transition-property: transform, filter;\n  transition-duration: inherit;\n  filter: grayscale(70%);\n}\n.album__cover:active {\n  transform: scale(0.99);\n}\n.album__content {\n  scrollbar-width: none !important;\n  position: relative;\n  z-index: 0;\n  width: 98%;\n  margin: 0 auto;\n  margin-top: -26px;\n  padding: 20px 8px;\n  border: 1px solid #1c1c1c54;\n  border-radius: 5px;\n  overflow-y: scroll;\n  background-color: #0f0f0f;\n  will-change: display;\n}\n.album__content::-webkit-scrollbar {\n  width: 0px;\n}\n.album__content:after {\n  content: \"\";\n  display: block;\n  height: 20px;\n  width: 100%;\n}\n@keyframes show {\n  from {\n    filter: opacity(0);\n  }\n  to {\n    filter: opacity(1);\n  }\n}\n@keyframes hide {\n  from {\n    filter: opacity(1);\n  }\n  to {\n    filter: opacity(0);\n  }\n}\n", "",{"version":3,"sources":["webpack://src/style/customScrollbars.less","webpack://src/components/Album/album.less","webpack://src/style/mixins.less"],"names":[],"mappings":"AAEA;EACE,gCAAA;ACDF;ADEE;EACE,UAAA;ACAJ;ADGA;EACE,qBAAA;EACA,oCAAA;ECDA,UAAU;EACV,WAAW;EACX,oBAAoB;AACtB;ADAE;EACE,UAAA;ACEJ;ADEE;EACE,uBAAA;ACAJ;ADIE;EACE,mBAAA;EACA,kBAAA;ACFJ;ADME;EACE,mBAAA;ACJJ;AAdA;EACE,YAAA;EACA,eAAA;EACA,cAAA;EACA,kCAAA;EACA,yBAAA;EACA,gBAAA;AAgBF;AAbA;EACE,YAAA;AAeF;AAhBA;EAII,YAAA;EACA,mDAAA;AAeJ;AAdI;EACE,uBAAA;AAgBN;AAvBA;EAYI,4BAAA;AAcJ;AA1BA;EAfE,+CAAA;EA+BE,kBAAA;EACA,yBAAA;EAEA,oBAAA;AAaJ;AARI;EACE,YAAA;AAUN;AAbA;EAQI,oBAAA;AAQJ;AAJA;EACE,kBAAA;EACA,4BAAA;AAMF;AAHA;EACE,WAAA;EACA,kBAAA;EACA,MAAA;EACA,iDAAA;EACA,iBAAA;EACA,UAAA;EACA,gBAAA;EACA,mBAAA;EAEA,cAAA;ECpEA,qCAAA;EDsEA,iBAAA;EACA,sCAAA;EACA,4BAAA;EACA,cAAA;EACA,kBAAA;AAIF;AAFE;EAAA;IACE,eAAA;EAKF;AACF;AAFA;EACE,kBAAA;EACA,UAAA;EACA,WAAA;EACA,kBAAA;EACA,sCAAA;EACA,4BAAA;EACA,sBAAA;AAIF;AAFE;EACE,sBAAA;AAIJ;AAAA;ED7FE,gCAAA;EC+FA,kBAAA;EACA,UAAA;EACA,UAAA;EACA,cAAA;EACA,iBAAA;EACA,iBAAA;EACA,2BAAA;EACA,kBAAA;EACA,kBAAA;EACA,yBAAA;EACA,oBAAA;AAEF;AD1GE;EACE,UAAA;AC4GJ;AAHE;EACE,WAAA;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAKJ;AADA;EACE;IAEE,kBAAA;EAEF;EACA;IAGE,kBAAA;EADF;AACF;AAGA;EACE;IAGE,kBAAA;EAHF;EAKA;IAGE,kBAAA;EALF;AACF","sourcesContent":["@import \"./colors.less\";\n\n.with-hidden-scrollbar {\n  scrollbar-width: none !important;\n  &::-webkit-scrollbar {\n    width: 0px;\n  }\n}\n.with-customized-scrollbar {\n  scrollbar-width: thin;\n  scrollbar-color: @accent-color transparent;\n\n  &::-webkit-scrollbar {\n    width: 5px;\n  }\n\n  /* Track */\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  /* Handle */\n  &::-webkit-scrollbar-thumb {\n    background: @accent-color;\n    border-radius: 5px;\n  }\n\n  /* Handle on hover */\n  &::-webkit-scrollbar-thumb:hover {\n    background: lighten(@accent-color, 5%);\n  }\n}\n","@import \"../../style/colors.less\";\n@import \"../../style/customScrollbars.less\";\n@import \"../../style/mixins.less\";\n\n.album-shadow() {\n  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.61);\n}\n\n@album-animation-speed: 0.3s;\n@album-width: 500px;\n\n.album {\n  width: @album-width;\n  max-width: 100%;\n  padding: 0 5px;\n  transition-property: filter, width;\n  transition-duration: @album-animation-speed;\n  overflow: hidden;\n}\n\n.album--opened {\n  width: 600px;\n\n  .album__cover {\n    filter: none;\n    box-shadow: 0px 35px 17px -17px rgba(0,0,0,0.75);\n    &:hover {\n      filter: brightness(1.1);\n    }\n  }\n  .album__title {\n    // filter: opacity(0);\n    transform: translateY(-100%);\n  }\n  .album__content {\n    .album-shadow();\n    margin-bottom: 5px; //otherwise the shadow will be cutted\n    background-color: #0b0b0b;\n    // animation: show 0.9s;\n    animation: show @album-animation-speed;\n  }\n}\n.album--closed {\n  .album__cover {\n    &:hover {\n      filter: none;\n    }\n  }\n\n  .album__content {\n    animation: hide @album-animation-speed;\n  }\n}\n\n.album__preview {\n  position: relative;\n  transition-duration: inherit;\n}\n\n.album__title {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  box-shadow: 0px 9px 10px -6px rgba(0, 0, 0, 0.84);\n  padding: 5px 10px;\n  z-index: 2;\n  font-weight: 700;\n  letter-spacing: 8px;\n\n  color: rgb(207, 207, 207);\n   .blurred-bg(rgba(0, 0, 0, 0.85); 4px; 85%);\n  user-select: none;\n  transition-property: filter, transform;\n  transition-duration: inherit;\n  font-size: 9vw;\n  text-align: center;\n\n  @media only screen and (min-width: @album-width) {\n    font-size: 40px;\n  }\n}\n\n.album__cover {\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 5px;\n  transition-property: transform, filter;\n  transition-duration: inherit;\n  filter: grayscale(70%);\n\n  &:active {\n    transform: scale(0.99);\n  }\n}\n\n.album__content {\n  .with-hidden-scrollbar();\n  position: relative;\n  z-index: 0;\n  width: 98%;\n  margin: 0 auto;\n  margin-top: -26px;\n  padding: 20px 8px;\n  border: 1px solid #1c1c1c54;\n  border-radius: 5px;\n  overflow-y: scroll;\n  background-color: #0f0f0f;\n  will-change: display;\n  //bottom padding\n  &:after {\n    content: \"\";\n    display: block;\n    height: 20px;\n    width: 100%;\n  }\n}\n\n@keyframes show {\n  from {\n    // max-height: 0;\n    filter: opacity(0);\n    // transform: scale(0);\n  }\n  to {\n    // transform: scale(1);\n    // max-height: 100%;\n    filter: opacity(1);\n  }\n}\n@keyframes hide {\n  from {\n    // transform: scale(1);\n    //max-height: 100%;\n    filter: opacity(1);\n  }\n  to {\n    // transform: scale(0);\n    //    max-height: 0;\n    filter: opacity(0);\n  }\n}\n",".blurred-bg(@color; @intensity: 10px; @opacity: 90%) {\n  background-color: @color;\n  // @supports (backdrop-filter: blur()) {\n  //   backdrop-filter: blur(@intensity);\n  //   background-color: fade(@color, @opacity);\n  // }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -9810,7 +9810,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".albums-collection__row {\n  display: flex;\n  row-gap: 40px;\n}\n", "",{"version":3,"sources":["webpack://src/components/AlbumsCollection/albumsCollection.less"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,aAAA;AACF","sourcesContent":[".albums-collection__row {\n  display: flex;\n  row-gap: 40px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".albums-collection__row {\n  display: flex;\n  row-gap: 40px;\n}\n", "",{"version":3,"sources":["webpack://src/components/AlbumsCollection/albumsCollection.less"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,aAAA;AACF","sourcesContent":[".albums-collection__row {\n  display: flex;\n  row-gap: 40px;\n  // .album {\n  //   margin-bottom: 40px;\n  //   .album__content {\n  //     margin-bottom: 5px;\n  //   }\n  // }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -9832,7 +9832,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".header {\n  background-color: #141414;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 50px;\n  padding: 2px 0;\n  z-index: 1000;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n}\n@supports (backdrop-filter: blur()) {\n  .header {\n    backdrop-filter: blur(10px);\n    background-color: rgba(20, 20, 20, 0.9);\n  }\n}\n.header__row {\n  height: 100%;\n}\n.header__inner {\n  position: relative;\n}\n.header__inner .tab-switcher {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  max-width: 70%;\n}\n.header__logo {\n  max-width: 10%;\n}\n", "",{"version":3,"sources":["webpack://src/components/Header/header.less","webpack://src/style/mixins.less"],"names":[],"mappings":"AAGA;ECFE,yBAAA;EDIA,eAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,cAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,WAAA;EACA,uDAAA;EACA,oDAAA;EACA,+CAAA;AAFF;ACbE;EAAA;IACE,2BAAA;IACA,uCAAA;EDgBF;AACF;AAFA;EACE,YAAA;AAIF;AAFA;EACE,kBAAA;AAIF;AALA;EAII,kBAAA;EACA,SAAA;EACA,QAAA;EACA,gCAAA;EACA,cAAA;AAIJ;AADA;EACE,cAAA;AAGF","sourcesContent":["@import \"../../style/sizes.less\";\n@import \"../../style/mixins.less\";\n\n.header {\n  .blurred-bg(#141414);\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: @header-height;\n  padding: 2px 0;\n  z-index: 1000;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n}\n.header__row {\n  height: 100%;\n}\n.header__inner {\n  position: relative;\n\n  .tab-switcher {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    max-width: 70%;\n  }\n}\n.header__logo {\n  max-width: 10%;\n}\n",".blurred-bg(@color; @intensity: 10px; @opacity: 90%) {\n  background-color: @color;\n  @supports (backdrop-filter: blur()) {\n    backdrop-filter: blur(@intensity);\n    background-color: fade(@color, @opacity);\n  }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".header {\n  background-color: #141414;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 50px;\n  padding: 2px 0;\n  z-index: 1000;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n}\n.header__row {\n  height: 100%;\n}\n.header__inner {\n  position: relative;\n}\n.header__inner .tab-switcher {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  max-width: 70%;\n}\n.header__logo {\n  max-width: 10%;\n}\n", "",{"version":3,"sources":["webpack://src/components/Header/header.less","webpack://src/style/mixins.less"],"names":[],"mappings":"AAGA;ECFE,yBAAA;EDIA,eAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,cAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,WAAA;EACA,uDAAA;EACA,oDAAA;EACA,+CAAA;AAFF;AAIA;EACE,YAAA;AAFF;AAIA;EACE,kBAAA;AAFF;AACA;EAII,kBAAA;EACA,SAAA;EACA,QAAA;EACA,gCAAA;EACA,cAAA;AAFJ;AAKA;EACE,cAAA;AAHF","sourcesContent":["@import \"../../style/sizes.less\";\n@import \"../../style/mixins.less\";\n\n.header {\n  .blurred-bg(#141414);\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: @header-height;\n  padding: 2px 0;\n  z-index: 1000;\n  display: flex;\n  justify-content: center;\n  color: #fff;\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);\n}\n.header__row {\n  height: 100%;\n}\n.header__inner {\n  position: relative;\n\n  .tab-switcher {\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    max-width: 70%;\n  }\n}\n.header__logo {\n  max-width: 10%;\n}\n",".blurred-bg(@color; @intensity: 10px; @opacity: 90%) {\n  background-color: @color;\n  // @supports (backdrop-filter: blur()) {\n  //   backdrop-filter: blur(@intensity);\n  //   background-color: fade(@color, @opacity);\n  // }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -9903,7 +9903,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_g
 var ___CSS_LOADER_URL_REPLACEMENT_4___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_img_icons_play_svg__WEBPACK_IMPORTED_MODULE_6__["default"]);
 var ___CSS_LOADER_URL_REPLACEMENT_5___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_img_icons_next_svg__WEBPACK_IMPORTED_MODULE_7__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".player {\n  background-color: #0c0c0c;\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 10000;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  padding: 10px 15px 0 15px;\n  max-width: 800px;\n  overflow: hidden;\n  height: 150px;\n  margin: 0 auto;\n  border-radius: 5px;\n  border: 1px solid rgba(126, 126, 126, 0.24);\n}\n@supports (backdrop-filter: blur()) {\n  .player {\n    backdrop-filter: blur(10px);\n    background-color: rgba(12, 12, 12, 0.9);\n  }\n}\n.player .song {\n  height: 40px;\n}\n.player__controll-panel {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  max-width: 400px;\n}\n.player__button {\n  width: 18px;\n  height: 18px;\n}\n.player__button:hover {\n  filter: brightness(1.3);\n}\n.player__button:active {\n  filter: brightness(1);\n}\n.player__shuffle-button:not(.player__button--activated):hover,\n.player__repeat-button:not(.player__button--activated):hover {\n  filter: grayscale(30%);\n}\n.player__shuffle-button:not(.player__button--activated):not(:hover),\n.player__repeat-button:not(.player__button--activated):not(:hover),\n.player__shuffle-button:not(.player__button--activated):active,\n.player__repeat-button:not(.player__button--activated):active {\n  filter: grayscale(100%);\n}\n.player__shuffle-button {\n  width: 22px;\n  height: 22px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.player__repeat-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n.player__main-controlls {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  width: 200px;\n  max-width: 200px;\n  margin: 0 auto;\n  padding: 1px 0;\n}\n.player__previous-audio-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n}\n.player__pause-button {\n  width: 32px;\n  height: 32px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n}\n.player__play-button {\n  width: 32px;\n  height: 32px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n}\n.player__next-audio-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\n}\n", "",{"version":3,"sources":["webpack://src/components/Player/player.less","webpack://src/style/mixins.less"],"names":[],"mappings":"AAIA;ECHE,yBAAA;EDKA,eAAA;EACA,SAAA;EACA,SAAA;EACA,2BAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,yBAAA;EACA,gBAAA;EACA,gBAAA;EACA,aAAA;EACA,cAAA;EACA,kBAAA;EACA,2CAAA;AAHF;ACjBE;EAAA;IACE,2BAAA;IACA,uCAAA;EDoBF;AACF;AArBA;EAoBI,YAAA;AAIJ;AAAA;EACE,aAAA;EACA,mBAAA;EACA,WAAA;EACA,gBAAA;AAEF;AACA;EACE,WAAA;EACA,YAAA;AACF;AACE;EACE,uBAAA;AACJ;AACE;EACE,qBAAA;AACJ;AAKI;;EACE,sBAAA;AAFN;AAKI;;;;EAEE,uBAAA;AADN;AAKA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AAHF;AAKA;EACE,gDAAA;AAHF;AAKA;EACE,aAAA;EACA,mBAAA;EACA,6BAAA;EACA,mBAAA;EACA,YAAA;EACA,gBAAA;EACA,cAAA;EACA,cAAA;AAHF;AAKA;EACE,gDAAA;AAHF;AAMA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AAJF;AAOA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AALF;AAQA;EACE,gDAAA;AANF","sourcesContent":["@import \"../../style/colors.less\";\n@import \"../../style/sizes.less\";\n@import \"../../style/mixins.less\";\n\n.player {\n  .blurred-bg(#0c0c0c);\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 10000;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  padding: 10px 15px 0 15px;\n  max-width: 800px;\n  overflow: hidden;\n  height: @player-height;\n  margin: 0 auto;\n  border-radius: 5px;\n  border: 1px solid rgba(126, 126, 126, 0.24);\n  .song {\n    height: 40px;\n  }\n}\n\n.player__controll-panel {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  max-width: 400px;\n}\n\n.player__button {\n  width: 18px;\n  height: 18px;\n\n  &:hover {\n    filter: brightness(1.3);\n  }\n  &:active {\n    filter: brightness(1);\n  }\n}\n.player__shuffle-button,\n.player__repeat-button {\n  &:not(.player__button--activated) {\n    &:hover {\n      filter: grayscale(30%);\n    }\n\n    &:not(:hover),\n    &:active {\n      filter: grayscale(100%);\n    }\n  }\n}\n.player__shuffle-button {\n  width: 22px;\n  height: 22px;\n  content: url(\"../../../assets/img/icons/shuffle.svg\");\n}\n.player__repeat-button {\n  content: url(\"../../../assets/img/icons/repeat.svg\");\n}\n.player__main-controlls {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  width: 200px;\n  max-width: 200px;\n  margin: 0 auto;\n  padding: 1px 0;\n}\n.player__previous-audio-button {\n  content: url(\"../../../assets/img/icons/previous.svg\");\n}\n\n.player__pause-button {\n  width: 32px;\n  height: 32px;\n  content: url(\"../../../assets/img/icons/pause.svg\");\n}\n\n.player__play-button {\n  width: 32px;\n  height: 32px;\n  content: url(\"../../../assets/img/icons/play.svg\");\n}\n\n.player__next-audio-button {\n  content: url(\"../../../assets/img/icons/next.svg\");\n}\n",".blurred-bg(@color; @intensity: 10px; @opacity: 90%) {\n  background-color: @color;\n  @supports (backdrop-filter: blur()) {\n    backdrop-filter: blur(@intensity);\n    background-color: fade(@color, @opacity);\n  }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".player {\n  background-color: #0c0c0c;\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 10000;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  padding: 10px 15px 0 15px;\n  max-width: 800px;\n  overflow: hidden;\n  height: 150px;\n  margin: 0 auto;\n  border-radius: 5px;\n  border: 1px solid rgba(126, 126, 126, 0.24);\n}\n.player .song {\n  height: 40px;\n}\n.player__controll-panel {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  max-width: 400px;\n}\n.player__button {\n  width: 18px;\n  height: 18px;\n}\n.player__button:hover {\n  filter: brightness(1.3);\n}\n.player__button:active {\n  filter: brightness(1);\n}\n.player__shuffle-button:not(.player__button--activated):hover,\n.player__repeat-button:not(.player__button--activated):hover {\n  filter: grayscale(30%);\n}\n.player__shuffle-button:not(.player__button--activated):not(:hover),\n.player__repeat-button:not(.player__button--activated):not(:hover),\n.player__shuffle-button:not(.player__button--activated):active,\n.player__repeat-button:not(.player__button--activated):active {\n  filter: grayscale(100%);\n}\n.player__shuffle-button {\n  width: 22px;\n  height: 22px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.player__repeat-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n.player__main-controlls {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  width: 200px;\n  max-width: 200px;\n  margin: 0 auto;\n  padding: 1px 0;\n}\n.player__previous-audio-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n}\n.player__pause-button {\n  width: 32px;\n  height: 32px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n}\n.player__play-button {\n  width: 32px;\n  height: 32px;\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n}\n.player__next-audio-button {\n  content: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\n}\n", "",{"version":3,"sources":["webpack://src/components/Player/player.less","webpack://src/style/mixins.less"],"names":[],"mappings":"AAIA;ECHE,yBAAA;EDKA,eAAA;EACA,SAAA;EACA,SAAA;EACA,2BAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,yBAAA;EACA,gBAAA;EACA,gBAAA;EACA,aAAA;EACA,cAAA;EACA,kBAAA;EACA,2CAAA;AAHF;AAfA;EAoBI,YAAA;AAFJ;AAMA;EACE,aAAA;EACA,mBAAA;EACA,WAAA;EACA,gBAAA;AAJF;AAOA;EACE,WAAA;EACA,YAAA;AALF;AAOE;EACE,uBAAA;AALJ;AAOE;EACE,qBAAA;AALJ;AAWI;;EACE,sBAAA;AARN;AAWI;;;;EAEE,uBAAA;AAPN;AAWA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AATF;AAWA;EACE,gDAAA;AATF;AAWA;EACE,aAAA;EACA,mBAAA;EACA,6BAAA;EACA,mBAAA;EACA,YAAA;EACA,gBAAA;EACA,cAAA;EACA,cAAA;AATF;AAWA;EACE,gDAAA;AATF;AAYA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AAVF;AAaA;EACE,WAAA;EACA,YAAA;EACA,gDAAA;AAXF;AAcA;EACE,gDAAA;AAZF","sourcesContent":["@import \"../../style/colors.less\";\n@import \"../../style/sizes.less\";\n@import \"../../style/mixins.less\";\n\n.player {\n  .blurred-bg(#0c0c0c);\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 10000;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  padding: 10px 15px 0 15px;\n  max-width: 800px;\n  overflow: hidden;\n  height: @player-height;\n  margin: 0 auto;\n  border-radius: 5px;\n  border: 1px solid rgba(126, 126, 126, 0.24);\n  .song {\n    height: 40px;\n  }\n}\n\n.player__controll-panel {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  max-width: 400px;\n}\n\n.player__button {\n  width: 18px;\n  height: 18px;\n\n  &:hover {\n    filter: brightness(1.3);\n  }\n  &:active {\n    filter: brightness(1);\n  }\n}\n.player__shuffle-button,\n.player__repeat-button {\n  &:not(.player__button--activated) {\n    &:hover {\n      filter: grayscale(30%);\n    }\n\n    &:not(:hover),\n    &:active {\n      filter: grayscale(100%);\n    }\n  }\n}\n.player__shuffle-button {\n  width: 22px;\n  height: 22px;\n  content: url(\"../../../assets/img/icons/shuffle.svg\");\n}\n.player__repeat-button {\n  content: url(\"../../../assets/img/icons/repeat.svg\");\n}\n.player__main-controlls {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  align-items: center;\n  width: 200px;\n  max-width: 200px;\n  margin: 0 auto;\n  padding: 1px 0;\n}\n.player__previous-audio-button {\n  content: url(\"../../../assets/img/icons/previous.svg\");\n}\n\n.player__pause-button {\n  width: 32px;\n  height: 32px;\n  content: url(\"../../../assets/img/icons/pause.svg\");\n}\n\n.player__play-button {\n  width: 32px;\n  height: 32px;\n  content: url(\"../../../assets/img/icons/play.svg\");\n}\n\n.player__next-audio-button {\n  content: url(\"../../../assets/img/icons/next.svg\");\n}\n",".blurred-bg(@color; @intensity: 10px; @opacity: 90%) {\n  background-color: @color;\n  // @supports (backdrop-filter: blur()) {\n  //   backdrop-filter: blur(@intensity);\n  //   background-color: fade(@color, @opacity);\n  // }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -10047,7 +10047,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".tabs-content {\n  overflow-y: scroll;\n  will-change: scroll-position;\n}\n.tabs-content::before {\n  content: \"\";\n  display: block;\n  height: calc(50px + 20px);\n  width: 100%;\n}\n.tabs-content::after {\n  content: \"\";\n  display: block;\n  height: calc(150px + 20px);\n  width: 100%;\n}\n.tabs-content__item-wrap {\n  display: none;\n}\n.tabs-content__item-wrap.tabs-content__item-wrap--active {\n  display: block;\n}\n", "",{"version":3,"sources":["webpack://src/components/TabsContent/tabsContent.less"],"names":[],"mappings":"AAEA;EACE,kBAAA;EACA,4BAAA;AADF;AAEE;EACE,WAAA;EACA,cAAA;EACA,yBAAA;EACA,WAAA;AAAJ;AAGE;EACE,WAAA;EACA,cAAA;EACA,0BAAA;EACA,WAAA;AADJ;AAKA;EAGE,aAAA;AALF;AAOA;EAGE,cAAA;AAPF","sourcesContent":["@import \"../../style/sizes.less\";\n\n.tabs-content {\n  overflow-y: scroll;\n  will-change: scroll-position;\n  &::before {\n    content: \"\";\n    display: block;\n    height: calc(@header-height + 20px);\n    width: 100%;\n  }\n\n  &::after {\n    content: \"\";\n    display: block;\n    height: calc(@player-height + 20px);\n    width: 100%;\n  }\n}\n\n.tabs-content__item-wrap {\n  // position: fixed;\n  // visibility: hidden;\n  display: none;\n}\n.tabs-content__item-wrap.tabs-content__item-wrap--active {\n  // position: static;\n  // visibility: visible;\n  display: block;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".tabs-content {\n  overflow-y: scroll;\n}\n.tabs-content::before {\n  content: \"\";\n  display: block;\n  height: calc(50px + 20px);\n  width: 100%;\n}\n.tabs-content::after {\n  content: \"\";\n  display: block;\n  height: calc(150px + 20px);\n  width: 100%;\n}\n.tabs-content__item-wrap {\n  display: none;\n}\n.tabs-content__item-wrap.tabs-content__item-wrap--active {\n  display: block;\n}\n", "",{"version":3,"sources":["webpack://src/components/TabsContent/tabsContent.less"],"names":[],"mappings":"AAEA;EACE,kBAAA;AADF;AAEE;EACE,WAAA;EACA,cAAA;EACA,yBAAA;EACA,WAAA;AAAJ;AAGE;EACE,WAAA;EACA,cAAA;EACA,0BAAA;EACA,WAAA;AADJ;AAKA;EAGE,aAAA;AALF;AAOA;EAGE,cAAA;AAPF","sourcesContent":["@import \"../../style/sizes.less\";\n\n.tabs-content {\n  overflow-y: scroll;\n  &::before {\n    content: \"\";\n    display: block;\n    height: calc(@header-height + 20px);\n    width: 100%;\n  }\n\n  &::after {\n    content: \"\";\n    display: block;\n    height: calc(@player-height + 20px);\n    width: 100%;\n  }\n}\n\n.tabs-content__item-wrap {\n  // position: fixed;\n  // visibility: hidden;\n  display: none;\n}\n.tabs-content__item-wrap.tabs-content__item-wrap--active {\n  // position: static;\n  // visibility: visible;\n  display: block;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -40305,6 +40305,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AlbumsCollection_AlbumsCollection_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../AlbumsCollection/AlbumsCollection.jsx */ "./src/components/AlbumsCollection/AlbumsCollection.jsx");
 /* harmony import */ var _Player_Player_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Player/Player.jsx */ "./src/components/Player/Player.jsx");
 /* harmony import */ var _VideoCollection_VideoCollection_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../VideoCollection/VideoCollection.jsx */ "./src/components/VideoCollection/VideoCollection.jsx");
+/* harmony import */ var _js_helpers_MediaSessionManager_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../js/helpers/MediaSessionManager.js */ "./src/js/helpers/MediaSessionManager.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40326,6 +40327,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -42337,6 +42339,191 @@ var ExtendedEvent = /*#__PURE__*/function () {
   return ExtendedEvent;
 }();
 
+
+
+/***/ }),
+
+/***/ "./src/js/helpers/MediaSessionManager.js":
+/*!***********************************************!*\
+  !*** ./src/js/helpers/MediaSessionManager.js ***!
+  \***********************************************/
+/*! exports provided: instance */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "instance", function() { return instance; });
+/* harmony import */ var _utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/UrlProvider.js */ "./src/js/utils/UrlProvider.js");
+/* harmony import */ var _Player_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Player.js */ "./src/js/helpers/Player.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var MediaSessionManager = /*#__PURE__*/function () {
+  // _fakeAudio is necessary so that mediaSession does not disappear when changing tracks
+  function MediaSessionManager() {
+    var _this = this;
+
+    _classCallCheck(this, MediaSessionManager);
+
+    _defineProperty(this, "supportsMediaSession", void 0);
+
+    _defineProperty(this, "_fakeAudio", new Audio());
+
+    this.supportsMediaSession = "mediaSession" in navigator;
+    this._fakeAudio.autoplay = false;
+    this._fakeAudio.volume = 0;
+    this._handlePlayerSongChange = this._handlePlayerSongChange.bind(this);
+    this._handlePlayerTogglePause = this._handlePlayerTogglePause.bind(this);
+    this._fakeAudio.src = MediaSessionManager.__FAKE_AUDIO_SRC;
+
+    this._fakeAudio.addEventListener("ended", function () {
+      _this._fakeAudio.currentTime = 0;
+
+      _this._fakeAudio.play();
+    }, false);
+
+    this.setPauseHandler(function () {
+      return _this.togglePlay();
+    });
+    this.setPlayHandler(function () {
+      return _this.togglePlay();
+    });
+    this.setSeekBackwardHandler(function () {
+      return true;
+    });
+    this.setSeekForwardHandler(function () {
+      return true;
+    });
+    this.setNextTrackHandler(function () {
+      return _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].playNext();
+    });
+    this.setPreviousTrackHandler(function () {
+      return _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].playPrevious();
+    });
+    _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].addOnSongChangeListener(this._handlePlayerSongChange);
+    _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].addOnTogglePlayListener(this._handlePlayerTogglePause);
+  }
+
+  _createClass(MediaSessionManager, [{
+    key: "togglePlay",
+    value: function togglePlay() {
+      _Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].togglePlay();
+
+      if (_Player_js__WEBPACK_IMPORTED_MODULE_1__["instance"].isPlaying) {
+        this.play();
+      } else {
+        this.pause();
+      }
+    }
+  }, {
+    key: "play",
+    value: function play() {
+      if (this.supportsMediaSession) {
+        this._fakeAudio.play();
+
+        navigator.mediaSession.playbackState = "playing";
+      }
+    }
+  }, {
+    key: "pause",
+    value: function pause() {
+      if (this.supportsMediaSession) {
+        this._fakeAudio.pause();
+
+        navigator.mediaSession.playbackState = "paused";
+      }
+    }
+  }, {
+    key: "setPauseHandler",
+    value: function setPauseHandler(callback) {
+      this._setHandler("pause", callback);
+    }
+  }, {
+    key: "setPlayHandler",
+    value: function setPlayHandler(callback) {
+      this._setHandler("play", callback);
+    }
+  }, {
+    key: "setSeekBackwardHandler",
+    value: function setSeekBackwardHandler(callback) {
+      this._setHandler("seekbackward", callback);
+    }
+  }, {
+    key: "setSeekForwardHandler",
+    value: function setSeekForwardHandler(callback) {
+      this._setHandler("seekforward", callback);
+    }
+  }, {
+    key: "setPreviousTrackHandler",
+    value: function setPreviousTrackHandler(callback) {
+      this._setHandler("previoustrack", callback);
+    }
+  }, {
+    key: "setNextTrackHandler",
+    value: function setNextTrackHandler(callback) {
+      this._setHandler("nexttrack", callback);
+    }
+  }, {
+    key: "update",
+    value: function update(song) {
+      if (!this.supportsMediaSession) {
+        return;
+      }
+
+      if (song) {
+        var albumCoverUrl = _utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_0__["UrlProvider"].getUrlToAlbumCover(song.albumId, 600);
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: song.title,
+          artist: "Twenty One Pilots",
+          artwork: [{
+            src: albumCoverUrl,
+            sizes: "600x600",
+            type: "image/jpeg"
+          }]
+        });
+      } else {
+        this._fakeAudio.src = MediaSessionManager.__FAKE_AUDIO_SRC;
+        navigator.mediaSession.metadata = null;
+      }
+    }
+  }, {
+    key: "_handlePlayerSongChange",
+    value: function _handlePlayerSongChange(songDescription) {
+      this.update(songDescription);
+    }
+  }, {
+    key: "_handlePlayerTogglePause",
+    value: function _handlePlayerTogglePause(isPlaying) {
+      if (isPlaying) {
+        this.play();
+      } else {
+        this.pause();
+      }
+    }
+  }, {
+    key: "_setHandler",
+    value: function _setHandler(name, callback) {
+      if (this.supportsMediaSession) {
+        navigator.mediaSession.setActionHandler(name, null);
+        navigator.mediaSession.setActionHandler(name, callback);
+      }
+    }
+  }]);
+
+  return MediaSessionManager;
+}();
+
+_defineProperty(MediaSessionManager, "__FAKE_AUDIO_SRC", "data/mp3/justAudioFile.mp3");
+
+var instance = new MediaSessionManager();
 
 
 /***/ }),
