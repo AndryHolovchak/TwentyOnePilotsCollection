@@ -43,7 +43,7 @@ class SongCachingButton extends Component {
 
   componentWillUnmount() {
     mp3Cache.removeUrlCacheStateListener(
-      this.targetUrl,
+      this.props.mp3Url,
       this.handleUrlCacheStateChange
     );
   }

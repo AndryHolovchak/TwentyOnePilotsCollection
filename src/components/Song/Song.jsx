@@ -46,7 +46,7 @@ class Song extends Component {
 
   componentWillUnmount() {
     playerPlaybackListener.removeListenerForSong(
-      this.instanceID,
+      this.props.info.instanceId,
       this.handleInteractionWithPlayer
     );
   }
