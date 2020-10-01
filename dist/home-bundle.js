@@ -43439,7 +43439,7 @@ var UrlProvider = /*#__PURE__*/function () {
   }, {
     key: "getUrlToYoutubePreview",
     value: function getUrlToYoutubePreview(videoId) {
-      return "https://img.youtube.com/vi/".concat(videoId, "/hqdefault.jpg");
+      return "https://img.youtube.com/vi/".concat(videoId, "/maxresdefault.jpg");
     }
   }]);
 
