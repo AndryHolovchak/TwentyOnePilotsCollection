@@ -40339,6 +40339,17 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+if ("serviceWorker" in navigator) {
+  console.log("CLIENT: service worker registration in progress.");
+  navigator.serviceWorker.register("../../../ServiceWorker.js").then(function () {
+    console.log("CLIENT: service worker registration complete.");
+  }, function () {
+    console.log("CLIENT: service worker registration failure.");
+  });
+} else {
+  console.log("CLIENT: service worker is not supported.");
+}
+
 var HomePage = /*#__PURE__*/function (_Component) {
   _inherits(HomePage, _Component);
 
@@ -41935,10 +41946,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-var CACHE_VERSION = 0;
-var CURRENT_CACHES = {
-  mp3: "mp3-cache-v" + CACHE_VERSION
-};
 var CACHE_AVAILABLE = ("caches" in self);
 var urlCacheStateEnum = Object.freeze({
   Uncached: 1,
@@ -42233,7 +42240,7 @@ var CacheApiSystem = /*#__PURE__*/function () {
   return CacheApiSystem;
 }();
 
-var mp3Cache = new CacheApiSystem(CURRENT_CACHES["mp3"]);
+var mp3Cache = new CacheApiSystem("mp3-cache");
 
 
 /***/ }),
@@ -43439,7 +43446,7 @@ var UrlProvider = /*#__PURE__*/function () {
   }, {
     key: "getUrlToYoutubePreview",
     value: function getUrlToYoutubePreview(videoId) {
-      return "https://img.youtube.com/vi/".concat(videoId, "/maxresdefault.jpg");
+      return "https://img.youtube.com/vi/".concat(videoId, "/hqdefault.jpg");
     }
   }]);
 

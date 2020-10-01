@@ -12,7 +12,7 @@ class UrlProvider {
     return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
   }
   static getUrlToYoutubePreview(videoId) {
-    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
   }
 }
 

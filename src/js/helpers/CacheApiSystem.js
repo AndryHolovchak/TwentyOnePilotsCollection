@@ -1,10 +1,5 @@
 import { ExtendedEvent } from "./ExtendedEvent";
 
-const CACHE_VERSION = 0;
-const CURRENT_CACHES = {
-  mp3: "mp3-cache-v" + CACHE_VERSION,
-};
-
 const CACHE_AVAILABLE = "caches" in self;
 const urlCacheStateEnum = Object.freeze({
   Uncached: 1,
@@ -102,6 +97,6 @@ class CacheApiSystem {
   }
 }
 
-let mp3Cache = new CacheApiSystem(CURRENT_CACHES["mp3"]);
+let mp3Cache = new CacheApiSystem("mp3-cache");
 
 export { mp3Cache, urlCacheStateEnum };
