@@ -63,7 +63,7 @@ class SongCachingButton extends Component {
         style={{ color: this.props.cachedColor }}
         onClick={this.handleClick}
       >
-        <span className="song-caching-button__text">offline</span>
+        <span className="song-caching-button__text">cached</span>
       </div>
     );
   }

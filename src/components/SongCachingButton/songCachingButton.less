@@ -2,12 +2,13 @@
 @import "../Song/song.less";
 @import "../../style/shimmeringText.less";
 
-@color-for-uncached: rgb(99, 99, 99);
+@color-for-uncached: rgba(99, 99, 99, 0.534); //rgb(99, 99, 99);
 
 .song-caching-button__text {
   user-select: none;
   font-size: 0.9em;
   color: @color-for-uncached;
+  text-decoration: line-through;
 
   &:hover {
     filter: brightness(1.5);
@@ -19,6 +20,7 @@
 .song-caching-button--cached {
   .song-caching-button__text {
     color: inherit;
+    text-decoration: none;
   }
 }
 .song-caching-button--in-progress {
