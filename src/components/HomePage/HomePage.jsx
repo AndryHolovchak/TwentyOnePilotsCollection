@@ -9,20 +9,6 @@ import { Player } from "../Player/Player.jsx";
 import { VideoCollection } from "../VideoCollection/VideoCollection.jsx";
 import { instance as mediaSessionManager } from "../../js/helpers/MediaSessionManager.js";
 
-if ("serviceWorker" in navigator) {
-  console.log("CLIENT: service worker registration in progress.");
-  navigator.serviceWorker.register("../../../ServiceWorker.js").then(
-    function () {
-      console.log("CLIENT: service worker registration complete.");
-    },
-    function () {
-      console.log("CLIENT: service worker registration failure.");
-    }
-  );
-} else {
-  console.log("CLIENT: service worker is not supported.");
-}
-
 class HomePage extends Component {
   constructor() {
     super();
