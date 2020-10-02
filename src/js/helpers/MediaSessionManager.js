@@ -3,11 +3,12 @@ import { instance as player } from "./Player.js";
 
 class MediaSessionManager {
   static __FAKE_AUDIO_SRC = "data/mp3/justAudioFile.mp3";
-  supportsMediaSession;
-  // _fakeAudio is necessary so that mediaSession does not disappear when changing tracks
-  _fakeAudio = new Audio();
+
   constructor() {
     this.supportsMediaSession = "mediaSession" in navigator;
+    // _fakeAudio is necessary so that mediaSession does not disappear while changing the tracks
+    // We will play fake audio during tracks loading
+    this._fakeAudio = new Audio();
     this._fakeAudio.autoplay = false;
     this._fakeAudio.volume = 0;
 
@@ -129,4 +130,4 @@ class MediaSessionManager {
 
 let instance = new MediaSessionManager();
 
-export { instance };
+// export { instance };

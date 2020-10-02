@@ -7,7 +7,7 @@ import { TabsContent } from "../TabsContent/TabsContent.jsx";
 import { AlbumsCollection } from "../AlbumsCollection/AlbumsCollection.jsx";
 import { Player } from "../Player/Player.jsx";
 import { VideoCollection } from "../VideoCollection/VideoCollection.jsx";
-import { instance as mediaSessionManager } from "../../js/helpers/MediaSessionManager.js";
+import "../../js/helpers/MediaSessionManager.js";
 
 class HomePage extends Component {
   constructor() {

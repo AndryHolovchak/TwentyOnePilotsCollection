@@ -9,10 +9,11 @@
   padding: 10px;
   border: 1px solid #1c1c1c;
   border-radius: 5px;
+  overflow: hidden;
   background-color: #111;
   transition: transform 0.2s;
-  overflow: hidden;
   box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.61);
+
   &:hover {
     background-color: rgb(20, 20, 20);
   }
@@ -46,13 +47,13 @@
 }
 
 .video-block__preview-img {
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: block;
-  height: auto;
   width: 100%;
+  height: auto;
 }
 
 .video-block__title-wrap {

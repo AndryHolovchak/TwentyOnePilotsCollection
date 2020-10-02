@@ -2,6 +2,7 @@
 
 .tabs-content {
   overflow-y: scroll;
+
   &::before {
     content: "";
     display: block;
@@ -18,12 +19,8 @@
 }
 
 .tabs-content__item-wrap {
-  // position: fixed;
-  // visibility: hidden;
   display: none;
 }
-.tabs-content__item-wrap.tabs-content__item-wrap--active {
-  // position: static;
-  // visibility: visible;
+.tabs-content__item-wrap--active {
   display: block;
 }

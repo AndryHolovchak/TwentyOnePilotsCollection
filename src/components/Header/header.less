@@ -1,20 +1,17 @@
 @import "../../style/sizes.less";
-@import "../../style/mixins.less";
 
 .header {
-  .blurred-bg(#141414);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: @header-height;
-  padding: 2px 0;
   z-index: 1000;
   display: flex;
   justify-content: center;
+  height: @header-height;
+  padding: 2px 0;
   color: #fff;
-  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: #141414;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .header__row {

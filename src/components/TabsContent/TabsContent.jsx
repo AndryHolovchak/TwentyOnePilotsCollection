@@ -7,7 +7,7 @@ class TabsContent extends Component {
   constructor(props) {
     super(props);
     this.nodeRef = React.createRef(null);
-    this.scrollYPositions = [];
+    this.scrollYPositions = []; // scroll positions for each tab
     this.handleActiveTabIndexChange = this.handleActiveTabIndexChange.bind(
       this
     );
@@ -45,12 +45,11 @@ class TabsContent extends Component {
 
   render() {
     let childs = this.getWrappedChildren();
-
     if (this.nodeRef.current) {
+      //Here we return the scroll to its position for a specific tab
       this.nodeRef.current.scrollTop =
         this.scrollYPositions[this.props.tabsSystem.activeTabIndex] || 0;
     }
-
     return (
       <div ref={this.nodeRef} className="tabs-content">
         {childs}

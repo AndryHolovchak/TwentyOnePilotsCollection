@@ -1,6 +1,7 @@
 import { ExtendedEvent } from "./ExtendedEvent";
 
 const CACHE_AVAILABLE = "caches" in self;
+const CACHE_NAME = "mp3-cache";
 const urlCacheStateEnum = Object.freeze({
   Uncached: 1,
   Caching: 2,
@@ -8,13 +9,10 @@ const urlCacheStateEnum = Object.freeze({
 });
 
 class CacheApiSystem {
-  _cache;
-  _initialized = false;
-  _onUrlCacheStateChange;
-  _initializationListeners = [];
-
   constructor(cacheName) {
     if (CACHE_AVAILABLE) {
+      this._initialized = false;
+      this._initializationListeners = [];
       this._onUrlCacheStateChange = new ExtendedEvent();
       this._onCacheChange = new ExtendedEvent();
       caches.open(cacheName).then((cache) => {
@@ -97,6 +95,6 @@ class CacheApiSystem {
   }
 }
 
-let mp3Cache = new CacheApiSystem("mp3-cache");
+let mp3Cache = new CacheApiSystem(CACHE_NAME);
 
 export { mp3Cache, urlCacheStateEnum };

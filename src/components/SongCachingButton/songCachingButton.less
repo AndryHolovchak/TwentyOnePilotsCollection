@@ -5,27 +5,20 @@
 @color-for-uncached: rgb(99, 99, 99);
 
 .song-caching-button__text {
+  user-select: none;
   font-size: 0.9em;
   color: @color-for-uncached;
-  user-select: none;
 
   &:hover {
-    color: lighten(@color-for-uncached, 20%);
-    text-decoration: none;
+    filter: brightness(1.5);
   }
   &:active {
-    color: lighten(@color-for-uncached, 5%);
+    filter: brightness(0.8);
   }
 }
 .song-caching-button--cached {
   .song-caching-button__text {
     color: inherit;
-    &:hover {
-      filter: brightness(1.5);
-    }
-    &:active {
-      filter: brightness(0.8);
-    }
   }
 }
 .song-caching-button--in-progress {

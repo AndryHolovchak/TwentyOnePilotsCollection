@@ -22,7 +22,6 @@ class VideoCollection extends Component {
     if (!this.state.isInitialized) {
       return <div className="video-collection"></div>;
     }
-
     return (
       <div className="video-collection">
         <div className="container-fluid">
