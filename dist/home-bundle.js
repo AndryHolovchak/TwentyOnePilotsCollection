@@ -42644,7 +42644,7 @@ var Player = /*#__PURE__*/function () {
       this._playlist = new _PlayerPlaylist_js__WEBPACK_IMPORTED_MODULE_1__["PlayerPlaylist"](id, songsInfo, initialSongIndex);
 
       if (this._isShuffleModeOn) {
-        this._playlist.shuffleOrder();
+        this._playlist.shuffle();
       }
     }
   }, {

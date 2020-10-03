@@ -137,7 +137,7 @@ class Player {
     this._playlist = new PlayerPlaylist(id, songsInfo, initialSongIndex);
 
     if (this._isShuffleModeOn) {
-      this._playlist.shuffleOrder();
+      this._playlist.shuffle();
     }
   }
 
