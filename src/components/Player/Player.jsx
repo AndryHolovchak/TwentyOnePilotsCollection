@@ -42,13 +42,39 @@ class Player extends React.Component {
     player.removeOnTogglePlayListener(this.handlePlayerTogglePlay);
   }
 
+  getAd() {
+    return (
+      <iframe
+        className="player__ad"
+        scrolling="no"
+        frameBorder="0"
+        style={{
+          padding: "0px",
+          margin: "0px",
+          border: "0px",
+          borderStyle: "none",
+        }}
+        width="468"
+        height="60"
+        src="http://refpakxdxg.top/I?tag=s_686647m_38151c_&site=686647&ad=38151"
+      ></iframe>
+    );
+  }
+
+  // {player.currentSong && (
+  //   <Song key={player.currentSong.id} info={player.currentSong}></Song>
+  // )}
+
   render() {
     return (
       <div className="player">
         <PlayerProgressBar></PlayerProgressBar>
-        {player.currentSong && (
+        {player.currentSong ? (
           <Song key={player.currentSong.id} info={player.currentSong}></Song>
+        ) : (
+          this.getAd()
         )}
+
         <div className="player__controll-panel">
           <div
             className={`player__button player__shuffle-button ${
