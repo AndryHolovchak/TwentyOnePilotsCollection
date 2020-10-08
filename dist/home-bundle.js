@@ -40158,20 +40158,6 @@ var AlbumsCollection = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row d-flex justify-content-center pb-5"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
-        scrolling: "no",
-        frameBorder: "0",
-        style: {
-          padding: "0px",
-          margin: "0px",
-          border: "0px",
-          borderStyle: "none"
-        },
-        width: "468",
-        height: "60",
-        src: "https://refpakglscpj.best/I?tag=s_686647m_38151c_&site=686647&ad=38151"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row row-cols-1 row-cols-md-2 row-cols-xl-3 albums-collection__row"
       }, AlbumsCollection.albumIds.map(function (id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -40510,20 +40496,7 @@ var Player = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "getAd",
     value: function getAd() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
-        className: "player__ad",
-        scrolling: "no",
-        frameBorder: "0",
-        style: {
-          padding: "0px",
-          margin: "0px",
-          border: "0px",
-          borderStyle: "none"
-        },
-        width: "468",
-        height: "60",
-        src: "https://refpakxdxg.top/I?tag=s_686647m_38151c_&site=686647&ad=38151"
-      });
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
     } // {player.currentSong && (
     //   <Song key={player.currentSong.id} info={player.currentSong}></Song>
     // )}

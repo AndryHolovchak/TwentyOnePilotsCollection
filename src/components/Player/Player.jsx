@@ -43,22 +43,7 @@ class Player extends React.Component {
   }
 
   getAd() {
-    return (
-      <iframe
-        className="player__ad"
-        scrolling="no"
-        frameBorder="0"
-        style={{
-          padding: "0px",
-          margin: "0px",
-          border: "0px",
-          borderStyle: "none",
-        }}
-        width="468"
-        height="60"
-        src="https://refpakxdxg.top/I?tag=s_686647m_38151c_&site=686647&ad=38151"
-      ></iframe>
-    );
+    return <></>;
   }
 
   // {player.currentSong && (
