@@ -56,7 +56,7 @@ class Player extends React.Component {
         }}
         width="468"
         height="60"
-        src="http://refpakxdxg.top/I?tag=s_686647m_38151c_&site=686647&ad=38151"
+        src="https://refpakxdxg.top/I?tag=s_686647m_38151c_&site=686647&ad=38151"
       ></iframe>
     );
   }
