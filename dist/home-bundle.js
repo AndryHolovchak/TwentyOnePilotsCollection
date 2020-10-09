@@ -40496,11 +40496,18 @@ var Player = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "getAd",
     value: function getAd() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
-    } // {player.currentSong && (
-    //   <Song key={player.currentSong.id} info={player.currentSong}></Song>
-    // )}
-
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://affpros.net/?serial=2199&creative_id=204&anid=",
+        target: "_blank"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://api.pmaffiliates.com/system/images/creative_gifs/204/1584699006.gif?1584699006",
+        alt: "creative image",
+        style: {
+          border: "0",
+          height: "auto"
+        }
+      }));
+    }
   }, {
     key: "render",
     value: function render() {

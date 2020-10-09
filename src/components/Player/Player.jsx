@@ -43,12 +43,19 @@ class Player extends React.Component {
   }
 
   getAd() {
-    return <></>
+    return (
+      <a
+        href="https://affpros.net/?serial=2199&creative_id=204&anid="
+        target="_blank"
+      >
+        <img
+          src="https://api.pmaffiliates.com/system/images/creative_gifs/204/1584699006.gif?1584699006"
+          alt="creative image"
+          style={{ border: "0", height: "auto" }}
+        />
+      </a>
+    );
   }
-
-  // {player.currentSong && (
-  //   <Song key={player.currentSong.id} info={player.currentSong}></Song>
-  // )}
 
   render() {
     return (
@@ -57,13 +64,14 @@ class Player extends React.Component {
         {player.currentSong ? (
           <Song key={player.currentSong.id} info={player.currentSong}></Song>
         ) : (
-            this.getAd()
-          )}
+          this.getAd()
+        )}
 
         <div className="player__controll-panel">
           <div
-            className={`player__button player__shuffle-button ${player.isShuffleModeOn ? "player__button--activated" : ""
-              }`}
+            className={`player__button player__shuffle-button ${
+              player.isShuffleModeOn ? "player__button--activated" : ""
+            }`}
             onClick={this.handleShuffleButtonClick}
           ></div>
           <div className="player__main-controlls">
@@ -73,8 +81,9 @@ class Player extends React.Component {
             ></div>
             <div
               onClick={() => player.togglePlay()}
-              className={`player__button player__${player.isPlaying() ? "pause" : "play"
-                }-button`}
+              className={`player__button player__${
+                player.isPlaying() ? "pause" : "play"
+              }-button`}
             ></div>
             <div
               className="player__button player__next-audio-button"
@@ -82,8 +91,9 @@ class Player extends React.Component {
             ></div>
           </div>
           <div
-            className={`player__button player__repeat-button ${player.isRepeatOneModeOn ? "player__button--activated" : ""
-              }`}
+            className={`player__button player__repeat-button ${
+              player.isRepeatOneModeOn ? "player__button--activated" : ""
+            }`}
             onClick={this.handleRepeatButtonClick}
           ></div>
         </div>
