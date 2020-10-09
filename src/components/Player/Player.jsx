@@ -43,7 +43,8 @@ class Player extends React.Component {
   }
 
   getAd() {
-    return <></>;
+    return <>
+      <iframe data-aa="1485040" src="//ad.a-ads.com/1485040?size=468x60" scrolling="no" style={{width: "468px", height: "60px", border: "0px", padding: "0px", overflow: "hidden"}} allowTransparency="true"></iframe></>;
   }
 
   // {player.currentSong && (
@@ -57,14 +58,13 @@ class Player extends React.Component {
         {player.currentSong ? (
           <Song key={player.currentSong.id} info={player.currentSong}></Song>
         ) : (
-          this.getAd()
-        )}
+            this.getAd()
+          )}
 
         <div className="player__controll-panel">
           <div
-            className={`player__button player__shuffle-button ${
-              player.isShuffleModeOn ? "player__button--activated" : ""
-            }`}
+            className={`player__button player__shuffle-button ${player.isShuffleModeOn ? "player__button--activated" : ""
+              }`}
             onClick={this.handleShuffleButtonClick}
           ></div>
           <div className="player__main-controlls">
@@ -74,9 +74,8 @@ class Player extends React.Component {
             ></div>
             <div
               onClick={() => player.togglePlay()}
-              className={`player__button player__${
-                player.isPlaying() ? "pause" : "play"
-              }-button`}
+              className={`player__button player__${player.isPlaying() ? "pause" : "play"
+                }-button`}
             ></div>
             <div
               className="player__button player__next-audio-button"
@@ -84,9 +83,8 @@ class Player extends React.Component {
             ></div>
           </div>
           <div
-            className={`player__button player__repeat-button ${
-              player.isRepeatOneModeOn ? "player__button--activated" : ""
-            }`}
+            className={`player__button player__repeat-button ${player.isRepeatOneModeOn ? "player__button--activated" : ""
+              }`}
             onClick={this.handleRepeatButtonClick}
           ></div>
         </div>
