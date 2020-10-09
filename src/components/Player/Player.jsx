@@ -43,8 +43,7 @@ class Player extends React.Component {
   }
 
   getAd() {
-    return <>
-      <iframe data-aa="1485040" src="//ad.a-ads.com/1485040?size=468x60" scrolling="no" style={{width: "468px", height: "60px", border: "0px", padding: "0px", overflow: "hidden"}} allowTransparency="true"></iframe></>;
+    return <></>
   }
 
   // {player.currentSong && (
