@@ -45,7 +45,7 @@ class Player extends React.Component {
   getAd() {
     return (
       <a href="http://refpazradt.top/L?tag=s_686647m_355c_&site=686647&ad=355">
-        <img src="/assets/img/1xbet.gif" className="player__add" />
+        <img src="assets/img/1xbet.gif" className="player__add" />
       </a>
     );
   }
