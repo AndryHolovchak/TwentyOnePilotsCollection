@@ -43,10 +43,27 @@ class Player extends React.Component {
   }
 
   getAd() {
+    // return (
+    //   <a href="http://refpazradt.top/L?tag=s_686647m_355c_&site=686647&ad=355">
+    //     <img src="assets/img/1xbet.gif" className="player__add" />
+    //   </a>
+    // );
+
     return (
-      <a href="http://refpazradt.top/L?tag=s_686647m_355c_&site=686647&ad=355">
-        <img src="assets/img/1xbet.gif" className="player__add" />
-      </a>
+      <iframe
+        scrolling="no"
+        frameBorder="0"
+        style={{
+          padding: "0px",
+          margin: "0px",
+          border: "0px",
+          borderStyle: "none",
+          maxWidth: "100%",
+        }}
+        width="600"
+        height="90"
+        src="https://refpakglscpj.best/I?tag=s_716259m_2141c_&site=716259&ad=2141"
+      ></iframe>
     );
   }
 
