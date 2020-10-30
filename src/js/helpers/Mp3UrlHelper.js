@@ -21,6 +21,7 @@ class Mp3UrlHelper {
   };
 
   _generateUrlForCachedMp3 = async (url) => {
+    console.log(url);
     let urlResponse = await mp3Cache.getResponseFor(url);
     let responseBlob = await urlResponse.blob();
     return URL.createObjectURL(responseBlob);
@@ -28,6 +29,8 @@ class Mp3UrlHelper {
 
   _handleCacheChange = async (url, change) => {
     if (change == urlCacheStateEnum.Cached) {
+      console.log("Url added to cache is beloew");
+      console.log(url);
       this._urlsToCachedMp3[url] = await this._generateUrlForCachedMp3(url);
     } else {
       this._urlsToCachedMp3[url] = null;

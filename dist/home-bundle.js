@@ -42629,19 +42629,20 @@ var Mp3UrlHelper = function Mp3UrlHelper() {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              _context2.next = 2;
+              console.log(url);
+              _context2.next = 3;
               return mp3Cache.getResponseFor(url);
 
-            case 2:
+            case 3:
               urlResponse = _context2.sent;
-              _context2.next = 5;
+              _context2.next = 6;
               return urlResponse.blob();
 
-            case 5:
+            case 6:
               responseBlob = _context2.sent;
               return _context2.abrupt("return", URL.createObjectURL(responseBlob));
 
-            case 7:
+            case 8:
             case "end":
               return _context2.stop();
           }
@@ -42661,22 +42662,24 @@ var Mp3UrlHelper = function Mp3UrlHelper() {
           switch (_context3.prev = _context3.next) {
             case 0:
               if (!(change == urlCacheStateEnum.Cached)) {
-                _context3.next = 6;
+                _context3.next = 8;
                 break;
               }
 
-              _context3.next = 3;
+              console.log("Url added to cache is beloew");
+              console.log(url);
+              _context3.next = 5;
               return _this._generateUrlForCachedMp3(url);
 
-            case 3:
+            case 5:
               _this._urlsToCachedMp3[url] = _context3.sent;
-              _context3.next = 7;
+              _context3.next = 9;
               break;
 
-            case 6:
+            case 8:
               _this._urlsToCachedMp3[url] = null;
 
-            case 7:
+            case 9:
             case "end":
               return _context3.stop();
           }
