@@ -42525,6 +42525,184 @@ var instance = new MediaSessionManager(); // export { instance };
 
 /***/ }),
 
+/***/ "./src/js/helpers/Mp3UrlHelper.js":
+/*!****************************************!*\
+  !*** ./src/js/helpers/Mp3UrlHelper.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _require = __webpack_require__(/*! ../utils/UrlProvider */ "./src/js/utils/UrlProvider.js"),
+    UrlProvider = _require.UrlProvider;
+
+var _require2 = __webpack_require__(/*! ./CacheApiSystem */ "./src/js/helpers/CacheApiSystem.js"),
+    mp3Cache = _require2.mp3Cache,
+    urlCacheStateEnum = _require2.urlCacheStateEnum;
+
+var Mp3UrlHelper = function Mp3UrlHelper() {
+  var _this = this;
+
+  _classCallCheck(this, Mp3UrlHelper);
+
+  _defineProperty(this, "_urlsToMp3", {});
+
+  _defineProperty(this, "_urlsToCachedMp3", {});
+
+  _defineProperty(this, "_handleCacheInitialization", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    var urls, _iterator, _step, url, relativeUrl;
+
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return mp3Cache.getAllUrls();
+
+          case 2:
+            urls = _context.sent;
+            _iterator = _createForOfIteratorHelper(urls);
+            _context.prev = 4;
+
+            _iterator.s();
+
+          case 6:
+            if ((_step = _iterator.n()).done) {
+              _context.next = 14;
+              break;
+            }
+
+            url = _step.value;
+            relativeUrl = UrlProvider.getRelativeURL(url);
+            _context.next = 11;
+            return _this._generateUrlForCachedMp3(relativeUrl);
+
+          case 11:
+            _this._urlsToCachedMp3[relativeUrl] = _context.sent;
+
+          case 12:
+            _context.next = 6;
+            break;
+
+          case 14:
+            _context.next = 19;
+            break;
+
+          case 16:
+            _context.prev = 16;
+            _context.t0 = _context["catch"](4);
+
+            _iterator.e(_context.t0);
+
+          case 19:
+            _context.prev = 19;
+
+            _iterator.f();
+
+            return _context.finish(19);
+
+          case 22:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[4, 16, 19, 22]]);
+  })));
+
+  _defineProperty(this, "_generateUrlForCachedMp3", /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url) {
+      var urlResponse, responseBlob;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return mp3Cache.getResponseFor(url);
+
+            case 2:
+              urlResponse = _context2.sent;
+              _context2.next = 5;
+              return urlResponse.blob();
+
+            case 5:
+              responseBlob = _context2.sent;
+              return _context2.abrupt("return", URL.createObjectURL(responseBlob));
+
+            case 7:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function (_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }());
+
+  _defineProperty(this, "_handleCacheChange", /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(url, change) {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              if (!(change == urlCacheStateEnum.Cached)) {
+                _context3.next = 6;
+                break;
+              }
+
+              _context3.next = 3;
+              return _this._generateUrlForCachedMp3(url);
+
+            case 3:
+              _this._urlsToCachedMp3[url] = _context3.sent;
+              _context3.next = 7;
+              break;
+
+            case 6:
+              _this._urlsToCachedMp3[url] = null;
+
+            case 7:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function (_x2, _x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }());
+
+  _defineProperty(this, "getUrlFor", function (uuid) {
+    _this._urlsToMp3[uuid] = _this._urlsToMp3[uuid] || UrlProvider.getUrlToMp3(uuid);
+    var url = _this._urlsToMp3[uuid];
+    return _this._urlsToCachedMp3[url] || url;
+  });
+
+  mp3Cache.addCacheChangesListener(this._handleCacheChange);
+  mp3Cache.callAfterInitialization(this._handleCacheInitialization);
+};
+
+module.exports = new Mp3UrlHelper();
+
+/***/ }),
+
 /***/ "./src/js/helpers/Player.js":
 /*!**********************************!*\
   !*** ./src/js/helpers/Player.js ***!
@@ -42539,6 +42717,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PlayerPlaylist_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlayerPlaylist.js */ "./src/js/helpers/PlayerPlaylist.js");
 /* harmony import */ var _ExtendedEvent_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ExtendedEvent.js */ "./src/js/helpers/ExtendedEvent.js");
 /* harmony import */ var _utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/UrlProvider.js */ "./src/js/utils/UrlProvider.js");
+/* harmony import */ var _Mp3UrlHelper_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Mp3UrlHelper.js */ "./src/js/helpers/Mp3UrlHelper.js");
+/* harmony import */ var _Mp3UrlHelper_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Mp3UrlHelper_js__WEBPACK_IMPORTED_MODULE_4__);
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -42550,6 +42730,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -42674,7 +42855,7 @@ var Player = /*#__PURE__*/function () {
 
       if (this._currentSong) {
         this._isMetadataLoaded = false;
-        this._htmlAudio.src = _utils_UrlProvider_js__WEBPACK_IMPORTED_MODULE_3__["UrlProvider"].getUrlToMp3(this._currentSong.id);
+        this._htmlAudio.src = _Mp3UrlHelper_js__WEBPACK_IMPORTED_MODULE_4___default.a.getUrlFor(this._currentSong.id);
 
         this._setHtmlAudioPlay(true);
       } else {
@@ -43408,6 +43589,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var UrlProvider = /*#__PURE__*/function () {
   function UrlProvider() {
     _classCallCheck(this, UrlProvider);
@@ -43416,7 +43599,7 @@ var UrlProvider = /*#__PURE__*/function () {
   _createClass(UrlProvider, null, [{
     key: "getUrlToMp3",
     value: function getUrlToMp3(songId) {
-      return "data/mp3/".concat(songId, ".mp3");
+      return "/data/mp3/".concat(songId, ".mp3");
     }
   }, {
     key: "getUrlToAlbumCover",
@@ -43442,6 +43625,15 @@ var UrlProvider = /*#__PURE__*/function () {
 
   return UrlProvider;
 }();
+
+_defineProperty(UrlProvider, "getRelativeURL", function (absoluteUrl) {
+  // remove the :// and split the string by '/'
+  var the_arr = absoluteUrl.replace("://", "").split("/"); // remove the first element (the domain part)
+
+  the_arr.shift(); // join again the splitted parts and return them with a '/' preceding
+
+  return "/" + the_arr.join("/");
+});
 
 
 

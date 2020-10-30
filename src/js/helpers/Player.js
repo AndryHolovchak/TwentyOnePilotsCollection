@@ -2,6 +2,7 @@ import { bindMethods } from "../utils/BindMethods.js";
 import { PlayerPlaylist } from "./PlayerPlaylist.js";
 import { ExtendedEvent } from "./ExtendedEvent.js";
 import { UrlProvider } from "../utils/UrlProvider.js";
+import Mp3UrlHelper from "./Mp3UrlHelper.js";
 
 class Player {
   _isRepeatOneModeOn = false;
@@ -154,7 +155,7 @@ class Player {
 
     if (this._currentSong) {
       this._isMetadataLoaded = false;
-      this._htmlAudio.src = UrlProvider.getUrlToMp3(this._currentSong.id);
+      this._htmlAudio.src = Mp3UrlHelper.getUrlFor(this._currentSong.id);
       this._setHtmlAudioPlay(true);
     } else {
       this._isMetadataLoaded = true;
