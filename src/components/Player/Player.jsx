@@ -43,18 +43,7 @@ class Player extends React.Component {
   }
 
   getAd() {
-    return (
-      <a
-        href="https://affpros.net/?serial=2199&creative_id=204&anid="
-        target="_blank"
-      >
-        <img
-          src="https://api.pmaffiliates.com/system/images/creative_gifs/204/1584699006.gif?1584699006"
-          alt="creative image"
-          style={{ border: "0", height: "auto" }}
-        />
-      </a>
-    );
+    return null;
   }
 
   render() {

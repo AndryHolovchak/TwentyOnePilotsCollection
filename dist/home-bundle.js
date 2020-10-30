@@ -40158,11 +40158,11 @@ var AlbumsCollection = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row row-cols-1 row-cols-md-2 row-cols-xl-3 albums-collection__row"
+        className: "row albums-collection__row"
       }, AlbumsCollection.albumIds.map(function (id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: id,
-          className: "col d-flex justify-content-center"
+          className: "col"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Album_Album_jsx__WEBPACK_IMPORTED_MODULE_1__["Album"], {
           albumId: id
         }));
@@ -40496,17 +40496,7 @@ var Player = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "getAd",
     value: function getAd() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://affpros.net/?serial=2199&creative_id=204&anid=",
-        target: "_blank"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://api.pmaffiliates.com/system/images/creative_gifs/204/1584699006.gif?1584699006",
-        alt: "creative image",
-        style: {
-          border: "0",
-          height: "auto"
-        }
-      }));
+      return null;
     }
   }, {
     key: "render",

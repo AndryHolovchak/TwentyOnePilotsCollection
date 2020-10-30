@@ -8,9 +8,9 @@ class AlbumsCollection extends Component {
     return (
       <div className="albums-collection">
         <div className="container-fluid">
-          <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 albums-collection__row">
+          <div className="row albums-collection__row">
             {AlbumsCollection.albumIds.map((id) => (
-              <div key={id} className="col d-flex justify-content-center">
+              <div key={id} className="col">
                 <Album albumId={id}></Album>
               </div>
             ))}
