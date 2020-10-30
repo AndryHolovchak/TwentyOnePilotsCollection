@@ -38,7 +38,6 @@ class Mp3UrlHelper {
     this._urlsToMp3[uuid] =
       this._urlsToMp3[uuid] || UrlProvider.getUrlToMp3(uuid);
     let url = this._urlsToMp3[uuid];
-
     return this._urlsToCachedMp3[url] || url;
   };
 }

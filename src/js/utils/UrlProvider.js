@@ -1,6 +1,6 @@
 class UrlProvider {
   static getUrlToMp3(songId) {
-    return `/data/mp3/${songId}.mp3`;
+    return `data/mp3/${songId}.mp3`;
   }
   static getUrlToAlbumCover(albumId, size) {
     return `data/covers/${size}/${albumId}.jpg`;
@@ -23,7 +23,8 @@ class UrlProvider {
     the_arr.shift();
 
     // join again the splitted parts and return them with a '/' preceding
-    return "/" + the_arr.join("/");
+    // return "/" + the_arr.join("/");
+    return the_arr.join("/");
   };
 }
 

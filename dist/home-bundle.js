@@ -40499,7 +40499,7 @@ var Player = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "http://refpazradt.top/L?tag=s_686647m_355c_&site=686647&ad=355"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/assets/img/1xbet.gif",
+        src: "assets/img/1xbet.gif",
         className: "player__add"
       }));
     }
@@ -43599,7 +43599,7 @@ var UrlProvider = /*#__PURE__*/function () {
   _createClass(UrlProvider, null, [{
     key: "getUrlToMp3",
     value: function getUrlToMp3(songId) {
-      return "/data/mp3/".concat(songId, ".mp3");
+      return "data/mp3/".concat(songId, ".mp3");
     }
   }, {
     key: "getUrlToAlbumCover",
@@ -43631,8 +43631,9 @@ _defineProperty(UrlProvider, "getRelativeURL", function (absoluteUrl) {
   var the_arr = absoluteUrl.replace("://", "").split("/"); // remove the first element (the domain part)
 
   the_arr.shift(); // join again the splitted parts and return them with a '/' preceding
+  // return "/" + the_arr.join("/");
 
-  return "/" + the_arr.join("/");
+  return the_arr.join("/");
 });
 
 
